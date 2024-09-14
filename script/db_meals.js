@@ -1,617 +1,144 @@
-const menu = [
-    {
-      name: "Europa",
-      starter: [
-        {
-          title: "Bruschetta",
-          ingredients: ["Brot", "Tomaten", "Knoblauch", "Basilikum", "Olivenöl"],
-          country: "Italien",
-          price: 5.5,
-          quantity: 0,
-        },
-        {
-          title: "Tapas",
-          ingredients: ["Oliven", "Chorizo", "Käse", "Patatas Bravas"],
-          country: "Spanien",
-          price: 6.0,
-          quantity: 0,
-        },
-        {
-          title: "Antipasti",
-          ingredients: ["gegrilltes Gemüse", "Oliven", "Salami", "Mozzarella"],
-          country: "Italien",
-          price: 7.0,
-          quantity: 0,
-        },
-      ],
-      main: [
-        {
-          title: "Wiener Schnitzel",
-          ingredients: ["Kalbfleisch", "Paniermehl", "Ei", "Kartoffeln"],
-          country: "Österreich",
-          price: 18.0,
-          quantity: 0,
-        },
-        {
-          title: "Paella",
-          ingredients: ["Reis", "Meeresfrüchte", "Safran", "Erbsen"],
-          country: "Spanien",
-          price: 20.0,
-          quantity: 0,
-        },
-        {
-          title: "Pizza Margherita",
-          ingredients: ["Teig", "Tomatensauce", "Mozzarella", "Basilikum"],
-          country: "Italien",
-          price: 12.0,
-          quantity: 0,
-        },
-        {
-          title: "Fish and Chips",
-          ingredients: ["Fischfilet", "Kartoffeln", "Erbsenpüree"],
-          country: "Vereinigtes Königreich",
-          price: 15.0,
-          quantity: 0,
-        },
-        {
-          title: "Lasagne",
-          ingredients: ["Pasta", "Hackfleisch", "Tomatensauce", "Käse"],
-          country: "Italien",
-          price: 14.0,
-          quantity: 0,
-        },
-      ],
-      dessert: [
-        {
-          title: "Tiramisu",
-          ingredients: ["Mascarpone", "Kaffee", "Löffelbiskuits", "Kakao"],
-          country: "Italien",
-          price: 6.5,
-          quantity: 0,
-        },
-        {
-          title: "Crème Brûlée",
-          ingredients: ["Sahne", "Vanille", "Zucker", "Eier"],
-          country: "Frankreich",
-          price: 7.0,
-          quantity: 0,
-        },
-        {
-          title: "Pavlova",
-          ingredients: ["Baiser", "Sahne", "Früchte"],
-          country: "Neuseeland/Australien",
-          price: 6.0,
-          quantity: 0,
-        },
-      ],
-      drinks: [
-        {
-          title: "Rotwein",
-          ingredients: ["Trauben"],
-          country: "Frankreich",
-          price: 8.0,
-          quantity: 0,
-        },
-        {
-          title: "Espresso",
-          ingredients: ["Kaffeebohnen"],
-          country: "Italien",
-          price: 2.5,
-          quantity: 0,
-        },
-      ],
+  const menu = {
+    Europa: {
+        starter: [
+            { title: "Bruschetta", ingredients: ["Tomaten", "Knoblauch", "Basilikum"], country: "Italien", price: 5.00, quantity: 0, id: "menu0starter0" },
+            { title: "Spanische Tortilla", ingredients: ["Kartoffeln", "Eier", "Zwiebeln"], country: "Spanien", price: 6.00, quantity: 0, id: "menu0starter1" },
+            { title: "Kürbiscremesuppe", ingredients: ["Kürbis", "Zwiebeln", "Sahne"], country: "Österreich", price: 6.00, quantity: 0, id: "menu0starter2" }
+          ],
+        main: [
+            { title: "Coq au Vin", ingredients: ["Hähnchen", "Rotwein", "Pilze"], country: "Frankreich", price: 15.00, quantity: 0, id: "menu0main0" },
+            { title: "Pasta Carbonara", ingredients: ["Pasta", "Speck", "Eier"], country: "Italien", price: 12.00, quantity: 0, id: "menu0main1" },
+            { title: "Paella", ingredients: ["Reis", "Meeresfrüchte", "Safran"], country: "Spanien", price: 18.00, quantity: 0, id: "menu0main2" },
+            { title: "Goulasch", ingredients: ["Rindfleisch", "Paprika", "Zwiebeln"], country: "Ungarn", price: 14.00, quantity: 0, id: "menu0main3" },
+            { title: "Sauerbraten", ingredients: ["Rindfleisch", "Essig", "Gewürze"], country: "Deutschland", price: 16.00, quantity: 0, id: "menu0main4" }
+        ],
+        dessert: [
+            { title: "Tiramisu", ingredients: ["Mascarpone", "Kaffee", "Löffelbiskuits"], country: "Italien", price: 6.00, quantity: 0, id: "menu0dessert0" },
+            { title: "Crêpes Suzette", ingredients: ["Crêpes", "Orangensauce", "Likör"], country: "Frankreich", price: 7.00, quantity: 0, id: "menu0dessert1" },
+            { title: "Sachertorte", ingredients: ["Schokolade", "Marillenmarmelade", "Kuchen"], country: "Österreich", price: 8.00, quantity: 0, id: "menu0dessert2" }
+        ],
+        drinks: [
+            { title: "Chianti", ingredients: ["Trauben"], country: "Italien", price: 12.00, quantity: 0, id: "menu0drinks0" },
+            { title: "Kölsch", ingredients: ["Gerste"], country: "Deutschland", price: 4.00, quantity: 0, id: "menu0drinks1" }
+        ]
     },
-    {
-      name: "Asien",
-      starter: [
-        {
-          title: "Frühlingsrollen",
-          ingredients: ["Teig", "Gemüse", "Sojasauce"],
-          country: "China",
-          price: 4.5,
-          quantity: 0,
-        },
-        {
-          title: "Gyoza",
-          ingredients: ["Teigtaschen", "Hackfleisch", "Kohl"],
-          country: "Japan",
-          price: 5.0,
-          quantity: 0,
-        },
-        {
-          title: "Samosas",
-          ingredients: ["Teig", "Kartoffeln", "Erbsen", "Gewürze"],
-          country: "Indien",
-          price: 4.0,
-          quantity: 0,
-        },
-      ],
-      main: [
-        {
-          title: "Pad Thai",
-          ingredients: ["Reisnudeln", "Eier", "Tofu", "Erdnüsse"],
-          country: "Thailand",
-          price: 12.0,
-          quantity: 0,
-        },
-        {
-          title: "Sushi",
-          ingredients: ["Reis", "Fisch", "Nori", "Sojasauce"],
-          country: "Japan",
-          price: 18.0,
-          quantity: 0,
-        },
-        {
-          title: "Chicken Tikka Masala",
-          ingredients: ["Hähnchen", "Tomatensauce", "Gewürze", "Reis"],
-          country: "Indien",
-          price: 15.0,
-          quantity: 0,
-        },
-        {
-          title: "Pho",
-          ingredients: ["Brühe", "Reisnudeln", "Rindfleisch", "Kräuter"],
-          country: "Vietnam",
-          price: 13.0,
-          quantity: 0,
-        },
-        {
-          title: "Bibimbap",
-          ingredients: ["Reis", "Gemüse", "Fleisch", "Gochujang"],
-          country: "Südkorea",
-          price: 14.0,
-          quantity: 0,
-        },
-      ],
-      dessert: [
-        {
-          title: "Mochi",
-          ingredients: ["Reismehl", "Zucker", "Füllung"],
-          country: "Japan",
-          price: 5.0,
-          quantity: 0,
-        },
-        {
-          title: "Mango Sticky Rice",
-          ingredients: ["Klebreis", "Kokosmilch", "Mango"],
-          country: "Thailand",
-          price: 6.5,
-          quantity: 0,
-        },
-        {
-          title: "Gulab Jamun",
-          ingredients: ["Milchpulver", "Zucker", "Rosenwasser"],
-          country: "Indien",
-          price: 4.5,
-          quantity: 0,
-        },
-      ],
-      drinks: [
-        {
-          title: "Grüner Tee",
-          ingredients: ["Teeblätter"],
-          country: "China",
-          price: 3.0,
-          quantity: 0,
-        },
-        {
-          title: "Lassi",
-          ingredients: ["Joghurt", "Wasser", "Zucker", "Gewürze"],
-          country: "Indien",
-          price: 4.0,
-          quantity: 0,
-        },
-      ],
+    Asien: {
+        starter: [
+            { title: "Edamame", ingredients: ["Sojabohnen"], country: "Japan", price: 4.00, quantity: 0, id: "menu1starter0" },
+            { title: "Frühlingsrollen", ingredients: ["Gemüse", "Reispapier"], country: "Vietnam", price: 5.00, quantity: 0, id: "menu1starter1" },
+            { title: "Kimchi", ingredients: ["Kohl", "Chili", "Knoblauch"], country: "Korea", price: 6.00, quantity: 0, id: "menu1starter2" }
+        ],
+        main: [
+            { title: "Ramen", ingredients: ["Nudeln", "Brühe", "Fleisch"], country: "Japan", price: 10.00, quantity: 0, id: "menu1main0" },
+            { title: "Pho", ingredients: ["Reisnudeln", "Rindfleisch", "Kräuter"], country: "Vietnam", price: 11.00, quantity: 0, id: "menu1main1" },
+            { title: "Bulgogi", ingredients: ["Rindfleisch", "Sojasauce", "Zwiebeln"], country: "Korea", price: 13.00, quantity: 0, id: "menu1main2" },
+            { title: "Pad Thai", ingredients: ["Reisnudeln", "Eier", "Erdnüsse"], country: "Thailand", price: 12.00, quantity: 0, id: "menu1main3" },
+            { title: "Sichuan Hot Pot", ingredients: ["Fleisch", "Gemüse", "Chili"], country: "China", price: 14.00, quantity: 0, id: "menu1main4" }
+        ],
+        dessert: [
+            { title: "Mango Sticky Rice", ingredients: ["Mango", "Klebreis", "Kokosmilch"], country: "Thailand", price: 5.00, quantity: 0, id: "menu1dessert0" },
+            { title: "Red Bean Paste Bun", ingredients: ["Bohnenpaste", "Teig"], country: "China", price: 4.00, quantity: 0, id: "menu1dessert1" },
+            { title: "Dorayaki", ingredients: ["Bohnenpaste", "Pfannkuchen"], country: "Japan", price: 5.00, quantity: 0, id: "menu1dessert2" }
+        ],
+        drinks: [
+            { title: "Sake", ingredients: ["Reis"], country: "Japan", price: 10.00, quantity: 0, id: "menu1drinks0" },
+            { title: "Bubble Tea", ingredients: ["Tee", "Tapioka", "Milch"], country: "Taiwan", price: 6.00, quantity: 0, id: "menu1drinks1" }
+        ]
     },
-    {
-      name: "Afrika",
-      starter: [
-        {
-          title: "Sambusa",
-          ingredients: ["Teig", "Hackfleisch", "Gewürze"],
-          country: "Äthiopien",
-          price: 3.5,
-          quantity: 0,
-        },
-        {
-          title: "Bunny Chow",
-          ingredients: ["Brot", "Curry", "Gemüse"],
-          country: "Südafrika",
-          price: 5.5,
-          quantity: 0,
-        },
-        {
-          title: "Plantain Chips",
-          ingredients: ["Kochbananen", "Öl", "Salz"],
-          country: "Nigeria",
-          price: 3.0,
-          quantity: 0,
-        },
-      ],
-      main: [
-        {
-          title: "Jollof Rice",
-          ingredients: ["Reis", "Tomaten", "Paprika", "Gewürze"],
-          country: "Nigeria",
-          price: 10.0,
-          quantity: 0,
-        },
-        {
-          title: "Tagine",
-          ingredients: ["Fleisch", "Gemüse", "Gewürze", "Couscous"],
-          country: "Marokko",
-          price: 14.0,
-          quantity: 0,
-        },
-        {
-          title: "Bobotie",
-          ingredients: ["Hackfleisch", "Eier", "Milch", "Gewürze"],
-          country: "Südafrika",
-          price: 12.0,
-          quantity: 0,
-        },
-        {
-          title: "Piri Piri Chicken",
-          ingredients: ["Hähnchen", "Piri-Piri-Sauce", "Kartoffeln"],
-          country: "Mosambik",
-          price: 13.5,
-          quantity: 0,
-        },
-        {
-          title: "Injera mit Doro Wat",
-          ingredients: ["Injera", "Huhn", "Zwiebeln", "Berbere"],
-          country: "Äthiopien",
-          price: 11.0,
-          quantity: 0,
-        },
-      ],
-      dessert: [
-        {
-          title: "Koeksisters",
-          ingredients: ["Teig", "Zucker", "Gewürze"],
-          country: "Südafrika",
-          price: 4.0,
-          quantity: 0,
-        },
-        {
-          title: "Malva Pudding",
-          ingredients: ["Mehl", "Milch", "Aprikosenmarmelade"],
-          country: "Südafrika",
-          price: 5.0,
-          quantity: 0,
-        },
-        {
-          title: "Coconut Macaroons",
-          ingredients: ["Kokosnuss", "Zucker", "Eier"],
-          country: "Ghana",
-          price: 3.5,
-          quantity: 0,
-        },
-      ],
-      drinks: [
-        {
-          title: "Rooibos Tee",
-          ingredients: ["Rooibos-Blätter"],
-          country: "Südafrika",
-          price: 2.5,
-          quantity: 0,
-        },
-        {
-          title: "Hibiskus Tee",
-          ingredients: ["Hibiskus-Blüten"],
-          country: "Nigeria",
-          price: 3.0,
-          quantity: 0,
-        },
-      ],
+    Afrika: {
+        starter: [
+            { title: "Bunny Chow", ingredients: ["Brot", "Curry"], country: "Südafrika", price: 7.00, quantity: 0, id: "menu2starter0" },
+            { title: "Samosa", ingredients: ["Teig", "Gemüse"], country: "Kenya", price: 5.00, quantity: 0, id: "menu2starter1" },
+            { title: "Yassa", ingredients: ["Hähnchen", "Zwiebeln", "Zitronen"], country: "Senegal", price: 6.00, quantity: 0, id: "menu2starter2" }
+        ],
+        main: [
+            { title: "Tagine", ingredients: ["Fleisch", "Trockenfrüchte", "Gewürze"], country: "Marokko", price: 14.00, quantity: 0, id: "menu2main0" },
+            { title: "Jollof Rice", ingredients: ["Reis", "Tomaten", "Gewürze"], country: "Nigeria", price: 12.00, quantity: 0, id: "menu2main1" },
+            { title: "Bunny Chow", ingredients: ["Brot", "Curry"], country: "Südafrika", price: 13.00, quantity: 0, id: "menu2main2" },
+            { title: "Koshari", ingredients: ["Reis", "Linsen", "Pasta"], country: "Ägypten", price: 11.00, quantity: 0, id: "menu2main3" },
+            { title: "Injera with Doro Wat", ingredients: ["Injera", "Hähnchen", "Gewürze"], country: "Äthiopien", price: 15.00, quantity: 0, id: "menu2main4" }
+        ],
+        dessert: [
+            { title: "Malva Pudding", ingredients: ["Zucker", "Eier", "Karamell"], country: "Südafrika", price: 6.00, quantity: 0, id: "menu2dessert0" },
+            { title: "Koeksisters", ingredients: ["Teig", "Sirup"], country: "Südafrika", price: 5.00, quantity: 0, id: "menu2dessert1" },
+            { title: "Mango Sorbet", ingredients: ["Mango", "Zucker"], country: "Nigeria", price: 5.00, quantity: 0, id: "menu2dessert2" }
+        ],
+        drinks: [
+            { title: "Rooibos Tea", ingredients: ["Rooibos"], country: "Südafrika", price: 4.00, quantity: 0, id: "menu2drinks0" },
+            { title: "Palm Wine", ingredients: ["Palmensaft"], country: "Nigeria", price: 8.00, quantity: 0, id: "menu2drinks1" }
+        ]
     },
-    {
-      name: "Nordamerika",
-      starter: [
-        {
-          title: "Nachos",
-          ingredients: ["Tortilla-Chips", "Käse", "Jalapeños", "Salsa"],
-          country: "Mexiko",
-          price: 6.0,
-          quantity: 0,
-        },
-        {
-          title: "Buffalo Wings",
-          ingredients: ["Hühnerflügel", "Scharfe Sauce", "Sellerie"],
-          country: "USA",
-          price: 7.0,
-          quantity: 0,
-        },
-        {
-          title: "Poutine",
-          ingredients: ["Pommes frites", "Bratensauce", "Käsebruch"],
-          country: "Kanada",
-          price: 8.0,
-          quantity: 0,
-        },
-      ],
-      main: [
-        {
-          title: "Burger",
-          ingredients: ["Rindfleisch", "Brötchen", "Salat", "Käse", "Tomaten"],
-          country: "USA",
-          price: 10.0,
-          quantity: 0,
-        },
-        {
-          title: "BBQ Ribs",
-          ingredients: ["Schweinerippen", "BBQ-Sauce", "Krautsalat"],
-          country: "USA",
-          price: 18.0,
-          quantity: 0,
-        },
-        {
-          title: "Tacos",
-          ingredients: ["Tortillas", "Fleisch", "Salsa", "Guacamole"],
-          country: "Mexiko",
-          price: 12.0,
-          quantity: 0,
-        },
-        {
-          title: "Clam Chowder",
-          ingredients: ["Muscheln", "Kartoffeln", "Sahne", "Zwiebeln"],
-          country: "USA",
-          price: 14.0,
-          quantity: 0,
-        },
-        {
-          title: "Pulled Pork Sandwich",
-          ingredients: ["Schweinefleisch", "Brötchen", "BBQ-Sauce"],
-          country: "USA",
-          price: 11.0,
-          quantity: 0,
-        },
-      ],
-      dessert: [
-        {
-          title: "Cheesecake",
-          ingredients: ["Frischkäse", "Keksboden", "Zucker"],
-          country: "USA",
-          price: 6.5,
-          quantity: 0,
-        },
-        {
-          title: "Apple Pie",
-          ingredients: ["Äpfel", "Teig", "Zucker", "Zimt"],
-          country: "USA",
-          price: 5.5,
-          quantity: 0,
-        },
-        {
-          title: "Brownie",
-          ingredients: ["Schokolade", "Mehl", "Eier", "Zucker"],
-          country: "USA",
-          price: 4.5,
-          quantity: 0,
-        },
-      ],
-      drinks: [
-        {
-          title: "Coca-Cola",
-          ingredients: ["Wasser", "Zucker", "Koffein"],
-          country: "USA",
-          price: 2.5,
-          quantity: 0,
-        },
-        {
-          title: "Milkshake",
-          ingredients: ["Milch", "Eiscreme", "Zucker"],
-          country: "USA",
-          price: 4.0,
-          quantity: 0,
-        },
-      ],
+    Nordamerika: {
+        starter: [
+            { title: "Buffalo Wings", ingredients: ["Hähnchenflügel", "Buffalo Sauce"], country: "USA", price: 8.00, quantity: 0, id: "menu3starter0" },
+            { title: "Poutine", ingredients: ["Pommes", "Käse", "Bratensauce"], country: "Kanada", price: 7.00, quantity: 0, id: "menu3starter1" },
+            { title: "Guacamole", ingredients: ["Avocado", "Tomaten", "Zwiebeln"], country: "Mexiko", price: 6.00, quantity: 0, id: "menu3starter2" }
+        ],
+        main: [
+            { title: "Cheeseburger", ingredients: ["Rindfleisch", "Käse", "Brötchen"], country: "USA", price: 12.00, quantity: 0, id: "menu3main0" },
+            { title: "Tacos", ingredients: ["Tortillas", "Fleisch", "Käse"], country: "Mexiko", price: 10.00, quantity: 0, id: "menu3main1" },
+            { title: "Poutine", ingredients: ["Pommes", "Käse", "Bratensauce"], country: "Kanada", price: 11.00, quantity: 0, id: "menu3main2" },
+            { title: "Clam Chowder", ingredients: ["Muscheln", "Sahne", "Kartoffeln"], country: "USA", price: 13.00, quantity: 0, id: "menu3main3" },
+            { title: "BBQ Ribs", ingredients: ["Rippchen", "BBQ Sauce"], country: "USA", price: 15.00, quantity: 0, id: "menu3main4" }
+        ],
+        dessert: [
+            { title: "Cheesecake", ingredients: ["Frischkäse", "Kekse", "Zucker"], country: "USA", price: 7.00, quantity: 0, id: "menu3dessert0" },
+            { title: "Churros", ingredients: ["Teig", "Zucker"], country: "Mexiko", price: 5.00, quantity: 0, id: "menu3dessert1" },
+            { title: "Maple Pie", ingredients: ["Ahornsirup", "Teig"], country: "Kanada", price: 6.00, quantity: 0, id: "menu3dessert2" }
+        ],
+        drinks: [
+            { title: "Margarita", ingredients: ["Tequila", "Limettensaft"], country: "Mexiko", price: 8.00, quantity: 0, id: "menu3drinks0" },
+            { title: "Root Beer", ingredients: ["Kräuter", "Zucker"], country: "USA", price: 3.00, quantity: 0, id: "menu3drinks1" }
+        ]
     },
-    {
-      name: "Südamerika",
-      starter: [
-        {
-          title: "Empanadas",
-          ingredients: ["Teig", "Fleisch", "Zwiebeln", "Gewürze"],
-          country: "Argentinien",
-          price: 5.0,
-          quantity: 0,
-        },
-        {
-          title: "Ceviche",
-          ingredients: ["Fisch", "Limette", "Koriander", "Zwiebeln"],
-          country: "Peru",
-          price: 7.5,
-          quantity: 0,
-        },
-        {
-          title: "Arepas",
-          ingredients: ["Maismehl", "Käse", "Butter"],
-          country: "Venezuela",
-          price: 4.5,
-          quantity: 0,
-        },
-      ],
-      main: [
-        {
-          title: "Feijoada",
-          ingredients: ["Schwarze Bohnen", "Schweinefleisch", "Reis"],
-          country: "Brasilien",
-          price: 15.0,
-          quantity: 0,
-        },
-        {
-          title: "Asado",
-          ingredients: ["Rindfleisch", "Gewürze", "Chimichurri"],
-          country: "Argentinien",
-          price: 20.0,
-          quantity: 0,
-        },
-        {
-          title: "Moqueca",
-          ingredients: ["Fisch", "Kokosmilch", "Tomaten", "Paprika"],
-          country: "Brasilien",
-          price: 16.0,
-          quantity: 0,
-        },
-        {
-          title: "Picanha",
-          ingredients: ["Rindfleisch", "Salz"],
-          country: "Brasilien",
-          price: 18.0,
-          quantity: 0,
-        },
-        {
-          title: "Ajiaco",
-          ingredients: ["Huhn", "Kartoffeln", "Mais", "Kräuter"],
-          country: "Kolumbien",
-          price: 13.0,
-          quantity: 0,
-        },
-      ],
-      dessert: [
-        {
-          title: "Dulce de Leche",
-          ingredients: ["Milch", "Zucker"],
-          country: "Argentinien",
-          price: 4.0,
-          quantity: 0,
-        },
-        {
-          title: "Brigadeiro",
-          ingredients: ["Kondensmilch", "Kakao", "Butter"],
-          country: "Brasilien",
-          price: 3.5,
-          quantity: 0,
-        },
-        {
-          title: "Tres Leches Cake",
-          ingredients: ["Milch", "Mehl", "Eier", "Zucker"],
-          country: "Mexiko",
-          price: 5.0,
-          quantity: 0,
-        },
-      ],
-      drinks: [
-        {
-          title: "Caipirinha",
-          ingredients: ["Cachaça", "Limette", "Zucker"],
-          country: "Brasilien",
-          price: 7.0,
-          quantity: 0,
-        },
-        {
-          title: "Mate-Tee",
-          ingredients: ["Mate-Blätter"],
-          country: "Argentinien",
-          price: 3.0,
-          quantity: 0,
-        },
-      ],
+    Südamerika: {
+        starter: [
+            { title: "Ceviche", ingredients: ["Fisch", "Limettensaft", "Zwiebeln"], country: "Peru", price: 9.00, quantity: 0, id: "menu4starter0" },
+            { title: "Empanadas", ingredients: ["Teig", "Fleisch", "Gewürze"], country: "Argentinien", price: 7.00, quantity: 0, id: "menu4starter1" },
+            { title: "Arepas", ingredients: ["Maismehl", "Käse"], country: "Kolumbien", price: 6.00, quantity: 0, id: "menu4starter2" }
+        ],
+        main: [
+            { title: "Feijoada", ingredients: ["Schweinefleisch", "Bohnen"], country: "Brasilien", price: 14.00, quantity: 0, id: "menu4main0" },
+            { title: "Asado", ingredients: ["Rindfleisch", "Gewürze"], country: "Argentinien", price: 16.00, quantity: 0, id: "menu4main1" },
+            { title: "Peruanisches Lomo Saltado", ingredients: ["Rindfleisch", "Tomaten", "Zwiebeln"], country: "Peru", price: 12.00, quantity: 0, id: "menu4main2" },
+            { title: "Pabellón Criollo", ingredients: ["Rindfleisch", "Schwarze Bohnen", "Reis"], country: "Venezuela", price: 13.00, quantity: 0, id: "menu4main3" },
+            { title: "Chivito", ingredients: ["Rindfleisch", "Käse", "Speck"], country: "Uruguay", price: 14.00, quantity: 0, id: "menu4main4" }
+        ],
+        dessert: [
+            { title: "Dulce de Leche Flan", ingredients: ["Milch", "Zucker"], country: "Argentinien", price: 5.00, quantity: 0, id: "menu4dessert0" },
+            { title: "Brigadeiro", ingredients: ["Kondensmilch", "Kakaopulver"], country: "Brasilien", price: 4.00, quantity: 0, id: "menu4dessert1" },
+            { title: "Churros", ingredients: ["Teig", "Zucker"], country: "Kolumbien", price: 5.00, quantity: 0, id: "menu4dessert2" }
+        ],
+        drinks: [
+            { title: "Caipirinha", ingredients: ["Cachaça", "Limettensaft", "Zucker"], country: "Brasilien", price: 8.00, quantity: 0, id: "menu4drinks0" },
+            { title: "Chicha Morada", ingredients: ["Lila Mais", "Ananas", "Zimt"], country: "Peru", price: 5.00, quantity: 0, id: "menu4drinks1" }
+          ]
     },
-    {
-      name: "Ozeanien",
-      starter: [
-        {
-          title: "Prawn Cocktail",
-          ingredients: ["Garnelen", "Cocktailsauce", "Salat"],
-          country: "Australien",
-          price: 6.5,
-          quantity: 0,
-        },
-        {
-          title: "Sausage Roll",
-          ingredients: ["Blätterteig", "Wurstfüllung"],
-          country: "Australien",
-          price: 4.0,
-          quantity: 0,
-        },
-        {
-          title: "Kumara Chips",
-          ingredients: ["Süßkartoffeln", "Öl", "Salz"],
-          country: "Neuseeland",
-          price: 3.5,
-          quantity: 0,
-        },
-      ],
-      main: [
-        {
-          title: "Lammkeule",
-          ingredients: ["Lamm", "Knoblauch", "Rosmarin", "Kartoffeln"],
-          country: "Neuseeland",
-          price: 22.0,
-          quantity: 0,
-        },
-        {
-          title: "Barramundi",
-          ingredients: ["Fisch", "Zitrone", "Kräuter"],
-          country: "Australien",
-          price: 18.0,
-          quantity: 0,
-        },
-        {
-          title: "Meat Pie",
-          ingredients: ["Teig", "Hackfleisch", "Zwiebeln", "Soße"],
-          country: "Australien",
-          price: 5.0,
-          quantity: 0,
-        },
-        {
-          title: "Känguru-Steak",
-          ingredients: ["Kängurufleisch", "Gewürze", "Gemüse"],
-          country: "Australien",
-          price: 20.0,
-          quantity: 0,
-        },
-        {
-          title: "Hangi",
-          ingredients: ["Fleisch", "Gemüse", "Erdeofen"],
-          country: "Neuseeland",
-          price: 25.0,
-          quantity: 0,
-        },
-      ],
-      dessert: [
-        {
-          title: "Pavlova",
-          ingredients: ["Baiser", "Sahne", "Früchte"],
-          country: "Neuseeland",
-          price: 6.0,
-          quantity: 0,
-        },
-        {
-          title: "Lamingtons",
-          ingredients: ["Kuchen", "Kokosnuss", "Schokolade"],
-          country: "Australien",
-          price: 4.5,
-          quantity: 0,
-        },
-        {
-          title: "Anzac Biscuits",
-          ingredients: ["Hafer", "Kokos", "Butter", "Zucker"],
-          country: "Australien/Neuseeland",
-          price: 3.0,
-          quantity: 0,
-        },
-      ],
-      drinks: [
-        {
-          title: "Flat White",
-          ingredients: ["Espresso", "Milchschaum"],
-          country: "Australien/Neuseeland",
-          price: 3.5,
-          quantity: 0,
-        },
-        {
-          title: "Lemon, Lime and Bitters",
-          ingredients: ["Limonade", "Limette", "Bitter"],
-          country: "Australien",
-          price: 4.0,
-          quantity: 0,
-        },
-      ],
-    },
-  ];
+    Ozeanien: {
+        starter: [
+            { title: "Pavlova", ingredients: ["Eier", "Zucker", "Früchte"], country: "Neuseeland", price: 6.00, quantity: 0, id: "menu5starter0" },
+            { title: "Meat Pie", ingredients: ["Fleisch", "Teig"], country: "Australien", price: 7.00, quantity: 0, id: "menu5starter1" },
+            { title: "Kangaroo Skewers", ingredients: ["Kängurufleisch", "Gewürze"], country: "Australien", price: 8.00, quantity: 0, id: "menu5starter2" }
+        ],
+        main: [
+            { title: "Barbecued Kangaroo", ingredients: ["Kängurufleisch", "Barbecuesauce"], country: "Australien", price: 16.00, quantity: 0, id: "menu5main0" },
+            { title: "Lamb Roast", ingredients: ["Lammfleisch", "Kräuter"], country: "Neuseeland", price: 18.00, quantity: 0, id: "menu5main1" },
+            { title: "Fish and Chips", ingredients: ["Fisch", "Pommes"], country: "Australien", price: 14.00, quantity: 0, id: "menu5main2" },
+            { title: "Damper", ingredients: ["Mehl", "Wasser"], country: "Australien", price: 11.00, quantity: 0, id: "menu5main3" },
+            { title: "Seafood Chowder", ingredients: ["Meeresfrüchte", "Sahne"], country: "Neuseeland", price: 15.00, quantity: 0, id: "menu5main4" }
+        ],
+        dessert: [
+            { title: "Anzac Biscuits", ingredients: ["Haferflocken", "Kokos"], country: "Australien", price: 5.00, quantity: 0, id: "menu5dessert0" },
+            { title: "Kiwifruit Sorbet", ingredients: ["Kiwifrüchte", "Zucker"], country: "Neuseeland", price: 4.00, quantity: 0, id: "menu5dessert1" },
+            { title: "Lamingtons", ingredients: ["Kuchen", "Kokos", "Schokolade"], country: "Australien", price: 6.00, quantity: 0, id: "menu5dessert2" }
+        ],
+        drinks: [
+            { title: "Flat White", ingredients: ["Espresso", "Milch"], country: "Neuseeland", price: 4.00, quantity: 0, id: "menu5drinks0" },
+            { title: "Bundaberg Ginger Beer", ingredients: ["Ingwer", "Zucker"], country: "Australien", price: 3.50, quantity: 0, id: "menu5drinks1" }
+        ]
+    }
+};
+
 
 console.log(menu)
 console.table(menu)
