@@ -1,0 +1,58 @@
+.choose_continent {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: calc(100vh - 88px);
+    top: 47px;
+    left: 0;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 15;
+
+    & .continent_link_ctn {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        left: 5%;
+        padding: 30px;
+        width: calc(100vw - 10% - 300px);
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        & a {
+            color: black;
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border-bottom: 1px solid rgba(0,0,0,0.25);
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                padding-left: 50px;
+                text-shadow: 0 0 2px var(--bestellapp-orange);
+            }
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+}
+
+@media(min-width: 1604px) {
+    .choose_continent {
+        .continent_link_ctn {
+            max-width: 1140px;
+            left: calc(50vw - 720px);
+        }
+    }
+}
+
+@media(max-width: 1000px) {
+    .choose_continent {
+        .continent_link_ctn {
+            width: 90%;
+            right: 5%;
+        }
+    }
+}

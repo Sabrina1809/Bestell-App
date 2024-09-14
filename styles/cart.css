@@ -1,0 +1,231 @@
+.cart_small {
+    position: fixed;
+    top: 47px;
+    bottom: 42px;
+    right: 5%;
+    z-index: 10;
+}
+
+.cart_full_screen {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: calc(100vh - 88px);
+    display: none;
+    justify-content: center;
+    top: 47px;
+    left: 0;
+    z-index: 15;
+}
+
+.content_cart {
+    width: 300px;
+    height: 100%;
+    box-shadow: 0 0 4px black;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    & h2 {
+        padding: 10px 0;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    & .cart_empty {
+        color: var(--bestellapp-orange);
+        display: none;
+        width: 280px;
+    }
+    & .menues_in_cart {
+        overflow-y: scroll;
+        width: 280px;
+        height: calc(100vh - 88px - 125px - 94px);
+        & .menu_in_cart {
+            padding: 10px;
+            background-color: rgba(255, 128, 0, 0.075);
+            border: 1px solid transparent;
+            border-radius: 10px;
+            margin: 5px 0;
+            & .menu_cart_title {
+                text-align: left;
+                font-weight: 600;
+                padding-bottom: 5px;
+            }
+            & .add_remove_line {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 14px;
+                & .meal_add_remove_inside_cart {
+                    z-index: 3;
+                    height: 30px;
+                    width: 30px;
+                    font-size: 26px;
+                    font-weight: lighter;
+                    padding-bottom: 4px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: black;
+                    opacity: 0.5;
+                    background-color: rgba(255, 128, 0, 0.075);
+                    border: 1px solid rgba(0,0,0,0.25);
+                    transition: all 0.1s ease-in-out;
+                    right: 20px;
+                    bottom: 15px;
+                    &:hover {
+                        opacity: 1;
+                        cursor: pointer;
+                        text-shadow: 0 0 1px var(--bestellapp-orange);
+                        box-shadow: 0 0 1px var(--bestellapp-orange) inset; 
+                    }
+                    &:active {
+                        scale: 0.9;
+                    }
+                }
+                & .basket {
+                    width: 20px;
+                    height: 20px;
+                    margin-top: 4px;
+                    outline: none;
+                    border: none;
+
+                    &:hover {
+                        opacity: 1;
+                        cursor: pointer;
+                        text-shadow: 0 0 1px var(--bestellapp-orange);
+                    }
+                    &:active {
+                        scale: 0.9;
+                    }
+                }
+            }
+            &:hover {
+                box-shadow: 0 0 2px var(--bestellapp-orange) inset;
+            }
+        }
+    }
+    & .cart_calc {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 280px;
+        margin-bottom: 10px;
+        & .switch_delivery_type {
+            margin: 5px 0;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           .switch { 
+                position: relative;
+                color: white;
+                font-size: 15px;
+                width: 160px;
+                height: 26px;
+                display: inline-block;
+                & .switch_ground {		    
+                    position: absolute;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 2px 8px;
+                    background-color: rgba(255, 128, 0, 0.7);
+                    border-radius: 10px;
+                    cursor: pointer;
+                    padding-bottom: 3px;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+                & .switch_ground::before {    
+                    background-color: white;
+                    border-radius: 7px;
+                    content: "";
+                    position: absolute;
+                    left: 3px;
+                    bottom: 3px;
+                    height: 19.5px;
+                    width: 78px;
+                    z-index: 20;
+                    transition: transform 0.5s;
+                }
+                input {
+                    display: none;
+                }
+                input:checked + div::before {
+                    transform: translateX(75px);
+                }
+                input:checked + .switch_ground {
+                    background-color: var(--bestellapp-orange);
+                }
+            }
+            & .deliverytime_ctn {
+                display: flex;
+                align-items: center;
+                justify-content: right;
+                gap: 5px;
+                & img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+        & .sum_section {
+            .sum {
+                display: flex;
+                gap: 10px;
+                padding-top: 3px;
+                justify-content: space-between;
+
+                .total_sum_title {
+                    font-size: 15px;
+                    padding-bottom: 3px;
+                    font-weight: 600;
+                }
+            }
+        }
+        & .send_order_ctn {
+            display: flex;
+            justify-content: end;
+
+            & .send_order {
+                padding: 5px 10px;
+                color: white;
+                font-size: 15px;
+                border: none;
+                border-radius: 10px;
+                background-color: rgba(255, 128, 0, 0.7);
+                transition: all 0.1s ease-in-out;
+            
+                &:hover {
+                    background-color: var(--bestellapp-orange);
+                    cursor: pointer;
+                }
+            
+                &:active {
+                    box-shadow: 0 0 2px black inset;
+                    scale: 0.95;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1604px) {
+    .cart_small {
+        left: calc((50vw + 720px) - 300px);
+    }
+}
+
+@media(max-width: 1000px) {
+    .cart_small {
+        display: none;
+    }
+    .cart_full_screen {
+        display: flex;
+    }
+}

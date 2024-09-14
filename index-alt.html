@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icon/Material/Favicon/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles/standard.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/meals.css">
+    <link rel="stylesheet" href="./styles/cart.css">
+    <title>Bestell-App</title>
+</head>
+<body id="body" onload="setDetails()">
+    <header id="top_position">
+        <div class="header_app content90">
+            <img class="logo_app" src="./assets/img/Logo.png" alt="" class="logo_app">
+            <div class="burger_closed_ctn">
+                <div class="burger_closed_line"></div>
+                <div class="burger_closed_line"></div>
+                <div class="burger_closed_line"></div>
+            </div>
+        </div>
+    </header>
+    <main id="content90" class="content90">
+        <div id="content_small" class="main_page content_small">
+            <div class="header_title_img">
+                <div class="img_single_ctn"><img class="tile_img title_img_one" src="./assets/img/rainbow-503134_1280.jpg" alt=""></div>
+                <div class="img_single_ctn"><img class="tile_img title_img_two" src="./assets/img/road-4645843_1280.jpg" alt=""></div>
+                <div class="img_single_ctn"><img class="tile_img title_img_three" src="./assets/img/banana-4493420_1280.jpg" alt=""></div>
+                <div class="img_single_ctn"><img class="tile_img title_img_four" src="./assets/img/lago-federa-3011939_1280.jpg" alt=""></div>
+                <div class="img_single_ctn"><img class="tile_img title_img_five" src="./assets/img/rice-terraces-1822443_1280.jpg" alt=""></div>
+                <div class="img_single_ctn"><img class="tile_img title_img_six" src="./assets/img/body-of-water-3049592_1280.jpg" alt=""></div>
+                <div class="img_single_ctn"><img class="tile_img title_img_seven" src="./assets/img/waterfall-7344396_1280.jpg" alt=""></div>
+                <div class="img_single_ctn"><img class="tile_img title_img_eight" src="./assets/img/wheat-2549245_1280.jpg" alt=""></div>
+            </div>
+            <img id="logo_restaurant" class="logo_restaurant" src="./assets/icon/reisen.png" alt="">
+            <h1>Taste The World</h1>
+            <div class="header_info">
+                <div class="rating">
+                    <img class="star_yellow" src="./assets/icon/star (1).png">
+                    <a href="">4.6 (181)</a>
+                </div>
+                <div class="minimum_sum">
+                    <img class="money" src="./assets/icon/icons8-geld-100.png" alt="">
+                    <p id="minimum_sum"></p>
+                </div>
+            </div>
+            <div class="choose_continent">
+                <div id="choose_continent_menu_closed" onclick="openCloseContinent()" class="choose_continent_menu_closed">
+                    <img onclick="" id="arrowOpenClose" src="./assets/icon/arrow-down-orange.png" alt="">
+                    <div onclick="" class="continent_filter">
+                        <p onclick="" id="continent_title">Nordamerika</p>
+                        <img onclick="" class="filter" id="filter" src="./assets/icon/icons8-filter-32.png" alt="">
+                    </div>
+                </div>
+            
+                
+            </div>
+            <div id="choose_meal_type" class="choose_meal_type">
+                <img id="arrowOpenClose" src="./assets/icon/arrow-down-orange.png" alt="">
+                <div class="choose_meal_type_option">
+                    <a id="choose_meal_type_option_starter" href="#starter">Vorspeise</a>
+                </div>
+                <div class="choose_meal_type_option">
+                    <a id="choose_meal_type_option_main"  href="#main">Hauptgang</a>
+                </div>
+                <div  class="choose_meal_type_option">
+                    <a id="choose_meal_type_option_dessert" href="#dessert">Dessert</a>
+                </div>
+                <div class="choose_meal_type_option">
+                    <a id="choose_meal_type_option_drinks" href="#drinks">Getränke</a>
+                </div>
+            </div>
+            <div id="meals" class="meals">
+                <div onmouseover="highlightMenuType('choose_meal_type_option_starter')" id="starter" class="meals_starter meals_ctn">
+                    <div class="meals_starter_header">
+                        <img src="./assets/img/gourmet-5619887_1280 (1).jpg" alt="">
+                        <h2>Vorspeise</h2>
+                    </div>
+                    <div id="meals_starter_menu" class="meals_starter_menu meals_menu">
+                        <!-- <div class="meals_starter_single meals_single">
+                            <div class="meals_starter_info">
+                                <h3 class="meal_title">Frühlingsrollen</h3>
+                                <div class="meal_ingredients">Teig, Gemüse, Sojasauce</div>
+                                <div class="meal_price">4,50 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div>
+                        <div class="meals_starter_single meals_single">
+                            <div class="meals_starter_info">
+                                <h3 class="meal_title">Gyoza</h3>
+                                <div class="meal_ingredients">Teigtaschen, Hackfleisch, Kohl</div>
+                                <div class="meal_price">5,00 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div>
+                        <div class="meals_starter_single meals_single">
+                            <div class="meals_starter_info">
+                                <h3 class="meal_title">Samosas</h3>
+                                <div class="meal_ingredients">Teig, Kartoffeln, Erbsen, Gewürze</div>
+                                <div class="meal_price">4,00 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div  onmouseover="highlightMenuType('choose_meal_type_option_main')" id="main" class="meals_main meals_ctn">
+                    <div class="meals_main_header">
+                        <img src="./assets/img/noodles-3557592_1280 (1).jpg" alt="">
+                        <h2>Hauptgang</h2>
+                    </div>
+                    <div id="meals_main_menu" class="meals_main_menu meals_menu">
+                        <!-- <div class="meals_main_single meals_single">
+                            <div class="meals_main_info">
+                                <h3 class="meal_title">Frühlingsrollen</h3>
+                                <div class="meal_ingredients">Teig, Gemüse, Sojasauce</div>
+                                <div class="meal_price">4,50 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div>
+                        <div class="meals_main_single meals_single">
+                            <div class="meals_main_info">
+                                <h3 class="meal_title">Gyoza</h3>
+                                <div class="meal_ingredients">Teigtaschen, Hackfleisch, Kohl</div>
+                                <div class="meal_price">5,00 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div>
+                        <div class="meals_main_single meals_single">
+                            <div class="meals_main_info">
+                                <h3 class="meal_title">Samosas</h3>
+                                <div class="meal_ingredients">Teig, Kartoffeln, Erbsen, Gewürze</div>
+                                <div class="meal_price">4,00 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div onmouseover="highlightMenuType('choose_meal_type_option_dessert')" id="dessert" class="meals_dessert meals_ctn">
+                    <div class="meals_dessert_header">
+                        <img src="./assets/img/food-5158707_1280.jpg" alt="">
+                        <h2>Dessert</h2>
+                    </div>
+                    <div id="meals_dessert_menu" class="meals_dessert_menu meals_menu">
+                        <!-- <div class="meals_dessert_single meals_single">
+                            <div class="meals_dessert_info">
+                                <h3 class="meal_title">Frühlingsrollen</h3>
+                                <div class="meal_ingredients">Teig, Gemüse, Sojasauce</div>
+                                <div class="meal_price">4,50 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div>
+                        <div class="meals_dessert_single meals_single">
+                            <div class="meals_dessert_info">
+                                <h3 class="meal_title">Gyoza</h3>
+                                <div class="meal_ingredients">Teigtaschen, Hackfleisch, Kohl</div>
+                                <div class="meal_price">5,00 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div>
+                        <div class="meals_dessert_single meals_single">
+                            <div class="meals_dessert_info">
+                                <h3 class="meal_title">Samosas</h3>
+                                <div class="meal_ingredients">Teig, Kartoffeln, Erbsen, Gewürze</div>
+                                <div class="meal_price">4,00 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div  onmouseover="highlightMenuType('choose_meal_type_option_drinks')" id="drinks" class="meals_drinks meals_ctn">
+                    <div class="meals_drinks_header">
+                        <img src="./assets/img/drink-1532300_1280.jpg" alt="">
+                        <h2>Getränke</h2>
+                    </div>
+                    <div id="meals_drinks_menu" class="meals_drinks_menu meals_menu">
+                        <!-- <div class="meals_drinks_single meals_single">
+                            <div class="meals_drinks_info">
+                                <div class="single_meal_header">
+                                    <h3 class="meal_title">Frühlingsrollen</h3>
+                                    <img class="img_location" src="./assets/icon/pin.png" alt="">
+                                    <p>Mexiko</p>
+                                </div>
+                                <div class="meal_ingredients">Teig, Gemüse, Sojasauce</div>
+                                <div class="meal_price">4,50 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                            <div id="count_menu_in_cart">5</div>
+                        </div>
+                        <div class="meals_drinks_single meals_single">
+                            <div class="meals_drinks_info">
+                                <h3 class="meal_title">Gyoza</h3>
+                                <div class="meal_ingredients">Teigtaschen, Hackfleisch, Kohl</div>
+                                <div class="meal_price">5,00 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div>
+                        <div class="meals_drinks_single meals_single">
+                            <div class="meals_drinks_info">
+                                <h3 class="meal_title">Samosas</h3>
+                                <div class="meal_ingredients">Teig, Kartoffeln, Erbsen, Gewürze</div>
+                                <div class="meal_price">4,00 €</div>
+                            </div>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div id="cart_background" class="cart_background">
+            
+            <div id="cart_complete" class="cart content90">
+               
+                <div class="cart_header">
+                    <!-- <div id="cart_icon_header" class="cart_icon_with_count_ctn cart_icon_header">
+                        <div  class="cart_icon_with_count">
+                            <img src="./assets/icon/icons8-warenkorb-leeren-32.png" alt="">
+                            <div id="count_in_cart_header_cart" class="count_in_cart"></div>
+                        </div>
+                       
+                    </div> -->
+                    <h2>Warenkorb</h2>
+                </div>
+                <div id="cart_empty" class="cart_empty">
+                    Dein Warenkorb ist leer. Füge leckere Gerichte aus der Karte hinzu.
+                </div>
+               
+                <div id="menues_in_cart" class="menues_in_cart">
+                    <!-- <div class="menu_in_cart">
+                        <div class="menu_cart_title">Frühlingsrollen</div>
+                        <div class="add_remove_line">
+                            <div class="meal_add_remove_cart">
+                                -
+                            </div>
+                            <span class="count">1</span>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                            <div class="price">4,50 €</div>
+                            <div class="meal_add_remove_cart delete_from_cart">
+                                <img class="basket" src="./assets/icon/icons8-müll-löschen-32 (1).png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_in_cart">
+                        <div class="menu_cart_title">Samosa</div>
+                        <div class="add_remove_line">
+                            <div class="meal_add_remove_cart">
+                                -
+                            </div>
+                            <span class="count">2</span>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                            <div class="price">8,00 €</div>
+                            <div class="meal_add_remove_cart delete_from_cart">
+                                <img class="basket" src="./assets/icon/icons8-müll-löschen-32 (1).png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_in_cart">
+                        <div class="menu_cart_title">Frühlingsrollen</div>
+                        <div class="add_remove_line">
+                            <div class="meal_add_remove_cart">
+                                -
+                            </div>
+                            <span class="count">1</span>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                            <div class="price">4,50 €</div>
+                            <div class="meal_add_remove_cart delete_from_cart">
+                                <img class="basket" src="./assets/icon/icons8-müll-löschen-32 (1).png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_in_cart">
+                        <div class="menu_cart_title">Samosa</div>
+                        <div class="add_remove_line">
+                            <div class="meal_add_remove_cart">
+                                -
+                            </div>
+                            <span class="count">2</span>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                            <div class="price">8,00 €</div>
+                            <div class="meal_add_remove_cart delete_from_cart">
+                                <img class="basket" src="./assets/icon/icons8-müll-löschen-32 (1).png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_in_cart">
+                        <div class="menu_cart_title">Frühlingsrollen</div>
+                        <div class="add_remove_line">
+                            <div class="meal_add_remove_cart">
+                                -
+                            </div>
+                            <span class="count">1</span>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                            <div class="price">4,50 €</div>
+                            <div class="meal_add_remove_cart delete_from_cart">
+                                <img class="basket" src="./assets/icon/icons8-müll-löschen-32 (1).png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu_in_cart">
+                        <div class="menu_cart_title">Samosa</div>
+                        <div class="add_remove_line">
+                            <div class="meal_add_remove_cart">
+                                -
+                            </div>
+                            <span class="count">2</span>
+                            <div class="meal_add_remove_cart">
+                                +
+                            </div>
+                            <div class="price">8,00 €</div>
+                            <div class="meal_add_remove_cart delete_from_cart">
+                                <img class="basket" src="./assets/icon/icons8-müll-löschen-32 (1).png" alt="">
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="flex_ctn_switch_time">
+                    <label onclick="chooseDeliveryOrPickup()" class="switch">
+                        <input id="deliveryOrPickup" type="checkbox">
+                        <div class="switch_ground">
+                            <span>Lieferung</span>
+                            <span>Abholung</span>
+                        </div>	  
+                    </label>
+                    <div class="deliverytime">
+                        <img src="./assets/icon/icons8-sanduhr-32.png" alt="">
+                        <span id="deliverytime"></span>
+                    </div>
+                </div>
+                <div class="sum_section">
+                    <div class="sum">
+                        <span class="current_sum_title">Bestellwert</span>
+                        <span id="min_sum_text" class="min_sum_text"></span>
+                        <span id="current_sum" class="current_sum"></span>
+                    </div>
+                    <div class="sum">
+                        <span class="delivery_sum_title">Lieferkosten</span>
+                        <span id="delivery_sum" class="delivery_sum"></span>
+                    </div>
+                    <div class="sum">
+                        <span class="total_sum_title">Gesamtpreis</span>
+                        <span id="total_sum" class="total_sum"></span>
+                    </div>
+                </div>
+                <div class="flex_ctn_order_button">
+                    <button onclick="checkMinSum(minimumSum)" class="send_order" type="submit">bestellen</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="choose_continent_background" class="choose_continent_background background_for_menu">
+       
+        <div id="choose_continent_menu_opened" class="choose_continent_menu_opened">
+            <div class="choose_continent_option">
+                <input onclick="" class="checkbox" type="checkbox" name="all" id="all_check">
+                <label for="all_check" onclick="setMenues()" id="all_label" class="label all">alle</label>
+            </div>
+            <div class="choose_continent_option">
+                <input onclick="" class="checkbox" type="checkbox" name="europa" id="europa_check">
+                <label for="europa_check" onclick="filterContinent(0)" id="europa_label" class="label europa">Europa</label>
+            </div>
+            <div class="choose_continent_option">
+                <input onclick="" class="checkbox" type="checkbox" name="asia" id="asia_check">
+                <label for="asia_check" onclick="filterContinent(1)" id="asia_label" class="label asia">Asien</label>
+            </div>
+            <div class="choose_continent_option">
+                <input onclick="" class="checkbox" type="checkbox" name="africa" id="africa_check">
+                <label for="africa_check" onclick="filterContinent(2)" id="africa_label" class="label africa">Afrika</label>
+            </div>
+            <div class="choose_continent_option">
+                <input onclick="" class="checkbox" type="checkbox" name="northamerica" id="northamerica_check">
+                <label for="northamerica_check" onclick="filterContinent(3)" id="northamerica_label" class="label northamerica">Nordamerika</label>
+            </div>
+            <div class="choose_continent_option">
+                <input onclick="" class="checkbox" type="checkbox" name="southamerica" id="southamerica_check">
+                <label for="southamerica_check" onclick="filterContinent(4)" id="southamerica_label" class="label southamerica">Südamerika</label>
+            </div>
+            <div class="choose_continent_option">
+                <input onclick="" class="checkbox" type="checkbox" name="oceania" id="oceania_check">
+                <label for="oceania_check" onclick="filterContinent(5)" id="oceania_label" class="label oceania">Ozeanien</label>
+            </div>
+        </div>
+    </div>
+    <div class="cart_icon_with_count_ctn" id="cart_icon_footer">
+        <div onclick="openCloseCart()"  class="cart_icon_with_count">
+            <img src="./assets/icon/icons8-warenkorb-64.png" alt="">
+            <div id="count_in_cart_main" class="count_in_cart"></div>
+        </div>
+    </div>
+    <div onclick="backToStart()" id="cart_icon_back_to_start" >
+        <a href="index.html"><img src="./assets/icon/icons8-zuhause-50.png" alt=""></a>
+    </div>
+   
+    <footer>
+        <span class="content90">© Sabrina Fritz 2024</span>
+        
+    </footer>
+    <script src="/script/db_meals.js"></script>
+    <script src="script.js"></script>
+    <script src="/script/templates.js"></script>
+</body>
+</html>
+<!-- Bild von <a href="https://pixabay.com/de/users/shogun-1310047/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7344396">Karl Egger</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7344396">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/aloha_mahalo-534414/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=503134">Candace Thoth</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=503134">Pixabay</a>Bild von 
+ <a href="https://pixabay.com/de/users/aloha_mahalo-534414/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=503134">Candace Thoth</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=503134">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/dpung-1382014/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=931165">dpung</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=931165">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/julius_silver-4371822/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3011939">Julius Silver</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3011939">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/jme1007-15665501/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4949224">JME1007</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4949224">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/jplenio-7645255/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4645843">Joe</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4645843">Pixabay</a> -->
+<!-- <a href="https://www.flaticon.com/de/kostenlose-icons/transport" title="transport Icons">Transport Icons erstellt von Iconjam - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/de/kostenlose-icons/reise" title="reise Icons">Reise Icons erstellt von Freepik - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/de/kostenlose-icons/um-die-welt" title="um die welt Icons">Um die welt Icons erstellt von Indygo - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/de/kostenlose-icons/um-die-welt" title="um die welt Icons">Um die welt Icons erstellt von HEA POH LIN - Flaticon</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/tranthangnhat-26199248/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7543526">Carlos / Saigon - Vietnam</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7543526">Pixabay</a> -->
+<!-- <a href="https://www.flaticon.com/de/kostenlose-icons/star" title="star Icons">Star Icons erstellt von Pixel perfect - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/de/kostenlose-icons/burger-menu" title="burger-menü Icons">Burger-menü Icons erstellt von bsd - Flaticon</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/couleur-1195798/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1501334">Couleur</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1501334">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/schliff-14384302/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4910430">schliff</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4910430">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/hoeldino-1443037/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2256329">Norbert Höldin</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2256329">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/gunnarmallon-13698769/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4493420">Gunnar Mallon</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4493420">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/kaipilger-5841200/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2549245">Kai Pilger</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2549245">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a>Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/ritae-19628/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3557592">-Rita-👩‍🍳 und 📷 mit ❤</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3557592">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/luckyhand2010-16493906/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5158702">Firas Hassoun</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5158702">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/ri_ya-12911237/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6841040">Ri Butov</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6841040">Pixabay</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/gApPmBfBhHWY/add-shopping-cart">Zum Warenkorb hinzufügen</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- <a href="https://www.flaticon.com/de/kostenlose-icons/pfeil-nach-unten" title="pfeil nach unten Icons">Pfeil nach unten Icons erstellt von Libby Chapman - Flaticon</a> -->
+<!-- <a href="https://www.flaticon.com/de/kostenlose-icons/pfeil-nach-unten" title="pfeil nach unten Icons">Pfeil nach unten Icons erstellt von Libby Chapman - Flaticon</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/A9TwBFreP1I5/add">Hinzufügen</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/OD5jprZTbcDK/delete-trash">Müll löschen</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/amiraxgelcola-13484139/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Carlos Carlos Alberto</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5619887">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/ritae-19628/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3557592">-Rita-👩‍🍳 und 📷 mit ❤</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3557592">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/ritae-19628/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3490886">-Rita-👩‍🍳 und 📷 mit ❤</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3490886">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/photomix-company-1546875/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1532300">Photo Mix</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1532300">Pixabay</a> -->
+<!-- Bild von <a href="https://pixabay.com/de/users/luckyhand2010-16493906/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5158702">Firas Hassoun</a> auf <a href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5158702">Pixabay</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/3004/filter">Filter</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/15849/hourglass">Sanduhr</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/49571/clear-shopping-cart">Warenkorb Leeren</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/9nqwC3xPx2pb/shopping-cart">Warenkorb</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/16668/map-pin">location</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- <a href="https://www.flaticon.com/free-icons/map-point" title="map point icons">Map point icons created by Smashicons - Flaticon</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/yNOu0CqTAQQt/cash">Geld</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/2445/logout">Ausgang</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/73/home">Zuhause</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->
+<!-- <a target="_blank" href="https://icons8.com/icon/47838/shopping-cart">Warenkorb</a> Icon von <a target="_blank" href="https://icons8.com">Icons8</a> -->

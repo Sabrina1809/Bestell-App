@@ -1,0 +1,164 @@
+.content_main_page {
+    .logo_restaurant {
+        border: none;
+        height: 70px;
+        width: 70px;
+        padding: 2px;
+        margin-top: -35px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 0 5px black;
+        position: sticky;
+        z-index: 12;
+        top: 12px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
+h1 {
+    text-shadow: 0 0 5px rgba(128, 128, 128, 0.532);
+    font-size: 22px;
+    background-color: white;
+    padding: 10px 0 0px 0;
+    position: sticky;
+    top: 46px;
+    margin-top: -39px;
+    z-index: 5;
+}
+.header_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    & .rating {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        background-color: white;
+        padding-bottom: 5px;
+
+        & .star_yellow {
+            border: none;
+            height: 20px;
+            width: 20px;
+        }
+        & span {
+            color: black;
+            text-underline-offset: 3px;
+            text-decoration-style: solid;
+            text-decoration-line: underline;
+        }
+
+        &:hover {
+            cursor: pointer;
+            text-shadow: 0 0 1px black;
+        }
+    }
+    & .minimum_sum {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        background-color: white;
+        padding-bottom: 5px;
+
+        & .money {
+            border: none;
+            height: 20px;
+            width: 20px;
+        }
+    }
+}
+#arrowOpenClose {
+    transform: rotate(270deg);
+    width: 20px;
+    height: 20px;
+}
+.choose_options {
+    background-color: white;
+    position: sticky;
+    top: 84px;
+    z-index: 5;
+    & .choose_continent_menu_closed {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding-top: 5px;
+        & .continent_filter {
+            display: flex;
+            gap: 10px;
+            & .filter {
+                height: 14px;
+                width: 14px;
+                align-self: center;
+            }
+            &:hover {
+                text-shadow: 0 0 2px rgba(0,0,0,0.5);
+                cursor: pointer;
+            }
+        }
+    }
+    & .choose_meal_type {
+        background-color: white;
+        align-items: end;
+        padding: 10px 0;
+        display: flex;
+        gap: 10px;
+        border-bottom: 0.5px solid rgba(0,0,0,0.1); 
+        
+        & .choose_meal_type_option {
+            position: relative;
+
+            & .active {
+                text-shadow: 0 0 1px var(--bestellapp-orange);
+            }
+            & a {
+                color: black;
+                text-decoration: none;
+            }
+            &:hover {
+                text-shadow: 0 0 2px rgba(0,0,0,0.5);
+                cursor: pointer;
+            }
+            &:focus {
+                text-shadow: 0 0 1px var(--bestellapp-orange);
+            }
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    main {
+        & h1 {
+            font-size: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        & .choose_continent {
+            top: 70px;
+            padding-bottom: 5px;
+        }
+        & .choose_meal_type {
+            top: 98px;
+            padding-top: 5px;
+        }
+    }
+}
+
+@media(max-width: 360px) {
+    main {
+        & .main_page {
+            & .logo_restaurant {
+                width: 50px;
+                height: 50px;
+                margin-top: -25px;
+                top: 22px;
+            }
+        }
+        & h1 {
+            margin-top: -28px;
+        }
+    }
+    #arrowOpenClose {
+        display: none;
+    }
+}

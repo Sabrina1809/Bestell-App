@@ -1,0 +1,122 @@
+.meals_ctn {
+    width: 100%;
+    & .meal_type {
+        padding: 20px 0;
+        & .meal_type_header {
+            & img {
+                height: 100px;
+                width: 100%;
+                object-fit: cover;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            & h2 {
+                padding: 5px 0 10px 0;
+            }
+        }
+        .meals_single {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(255, 128, 0, 0.075);
+            border: 1px solid transparent;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            margin: 15px 0;
+            position: relative;
+            &:hover {
+               box-shadow: 0 0 2px var(--bestellapp-orange) inset;
+            }
+            & .meals_info {
+                & .single_meal_header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    margin-bottom: 10px;
+                    & .img_location {
+                        height: 14px;
+                        width: 14px;
+                        margin-top: 0;
+                        margin-left: 20px;
+                        margin-right: 5px;
+                    }
+                    & p {
+                        padding-top: 10px;
+                        font-size: 12px;
+                        color: var(--bestellapp-orange);
+                    }
+                }
+                & .meal_price {
+                    color: var(--bestellapp-orange);
+                    font-weight: bold;
+                    margin-top: 10px;
+                }
+            }
+            & .count_and_add {
+                position: relative;
+                height: 60px;
+                width: 60px;
+                & .count_this_menu {
+                    padding-top: 20px;
+                    padding-left: 7px;
+                    position: absolute;
+                    height: 60px;
+                    width: 60px;
+                    border: 1px solid rgba(0,0,0,0.25);
+                    border-radius: 50%;
+                    top: 0;
+                    right: 50px;
+                    transform: translate(50%);
+                    background-color: rgba(255, 255, 255, 0.5);
+                    color: black;
+                    opacity: 0.5;
+                }
+                & .meal_add_remove_cart {
+                    position: absolute;
+                    z-index: 3;
+                    height: 30px;
+                    width: 30px;
+                    font-size: 26px;
+                    font-weight: lighter;
+                    padding-bottom: 4px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: black;
+                    opacity: 0.5;
+                    background-color: rgba(255, 128, 0, 0.075);
+                    border: 1px solid rgba(0,0,0,0.25);
+                    transition: all 0.1s ease-in-out;
+                    right: 20px;
+                    bottom: 15px;
+                    
+                    &:hover {
+                        opacity: 1;
+                        cursor: pointer;
+                        text-shadow: 0 0 1px var(--bestellapp-orange);
+                        box-shadow: 0 0 1px var(--bestellapp-orange) inset; 
+                    }
+                
+                    &:active {
+                        scale: 0.9;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 1000px) {
+    .meals_ctn {
+        & .meal_type {
+            & .meal_type_header {
+                & img {
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+    }
+}

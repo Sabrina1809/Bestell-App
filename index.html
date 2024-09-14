@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./styles/standard.css">
+        <link rel="stylesheet" href="./styles/header_bestellapp.css">
+        <link rel="stylesheet" href="./styles/content_main_page.css">
+        <link rel="stylesheet" href="./styles/header_restaurant.css">
+        <link rel="stylesheet" href="./styles/continent_nav.css">
+        <link rel="stylesheet" href="./styles/meals.css">
+        <link rel="stylesheet" href="./styles/cart.css">
+        <link rel="stylesheet" href="./styles/rating.css">
+        <link rel="stylesheet" href="./styles/title_img.css">
+        <link rel="shortcut icon" href="./assets/icon/Material/Favicon/favicon-16x16.png" type="image/x-icon">
+        <title>Bestell-App</title>
+    </head>
+    <body id="body" onload="">
+        <header id="top_position">
+            <div class="header_app content90">
+                <img class="logo_app" src="./assets/img/Logo.png" alt="Logo Bestell-App">
+                <div class="burger_closed_ctn">
+                    <div class="burger_closed_line"></div>
+                    <div class="burger_closed_line"></div>
+                    <div class="burger_closed_line"></div>
+                </div>
+            </div>
+        </header>
+        <main id="main_section">
+            <div class="shared_main_page content90">
+                <div class="content_main_page">
+                    <div class="header_title_img">
+                        <div id="title_img_one" class="img_single_ctn"></div>
+                        <div id="title_img_two" class="img_single_ctn"></div>
+                        <div id="title_img_three" class="img_single_ctn"></div>
+                        <div id="title_img_four" class="img_single_ctn"></div>
+                        <div id="title_img_five" class="img_single_ctn"></div>
+                        <div id="title_img_six" class="img_single_ctn"></div>
+                        <div id="title_img_seven" class="img_single_ctn"></div>
+                        <div id="title_img_eight" class="img_single_ctn"></div>
+                    </div>
+                    <img id="logo_restaurant" class="logo_restaurant" src="./assets/icon/logo_restaurant.png" alt="Logo Restaurant">
+                    <h1>Taste The World</h1>
+                    <div class="header_info">
+                        <div class="rating">
+                            <img class="star_yellow" src="./assets/icon/star.png" alt="gelber Stern">
+                            <span onclick="openRating()">4.6 (23)</span>
+                        </div>
+                        <div class="minimum_sum">
+                            <img class="money" src="./assets/icon/money.png" alt="Geldschein und Münzen">
+                            <p id="minimum_sum">mind. 17,00 €</p>
+                        </div>
+                    </div>
+                    <div class="choose_options">
+                        <div id="choose_continent_menu_closed" onclick="" class="choose_continent_menu_closed">
+                            <img id="arrowOpenClose" src="./assets/icon/arrow.png" alt="Pfeil nach rechts">
+                            <div class="continent_filter">
+                                <p id="continent_title">Nordamerika</p>
+                                <img class="filter" id="filter" src="./assets/icon/filter.png" alt="Trichter">
+                            </div>
+                        </div>
+                        <div id="choose_meal_type" class="choose_meal_type">
+                            <img id="arrowOpenClose" src="./assets/icon/arrow.png" alt="Pfeil nach rechts">
+                            <div class="choose_meal_type_option">
+                                <a class="active" id="choose_meal_type_option_starter" href="#starter">Vorspeise</a>
+                            </div>
+                            <div class="choose_meal_type_option">
+                                <a id="choose_meal_type_option_main"  href="#main">Hauptgang</a>
+                            </div>
+                            <div  class="choose_meal_type_option">
+                                <a id="choose_meal_type_option_dessert" href="#dessert">Dessert</a>
+                            </div>
+                            <div class="choose_meal_type_option">
+                                <a id="choose_meal_type_option_drinks" href="#drinks">Getränke</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="meals" class="meals_ctn">
+                        <div id="starter" class="meal_type starter">
+                            <div class="meal_type_header">
+                                <img src="./assets/img/gourmet-5619887_1280 (1).jpg" alt="Vorspeise">
+                                <h2>Vorspeise</h2>
+                            </div>
+                            <div id="meals_starter" class="meals_starter">
+                                <div class="meals_starter_single meals_single">
+                                    <div class="meals_info">
+                                        <div class="single_meal_header">
+                                                <h3 class="meal_title">${(menu[i].starter[j].title)}</h3>
+                                                <img class="img_location" src="./assets/icon/pin.png" alt="">
+                                                <p>${menu[i].starter[j].country}</p>
+                                        </div>
+                                        <div class="meal_ingredients">${ingredientsArrayStyled}</div>
+                                        <div class="meal_price">${(menu[i].starter[j].price).toFixed(2)} €</div>
+                                    </div>
+                                    <div class="count_and_add">
+                                        <div class="count_this_menu">33</div>
+                                        <div class="meal_add_remove_cart" id="meal_add_remove_cart" onclick="saveMealInfo('${i}', 'starter', '${j}')">+</div>
+                                    </div>
+                                </div>
+                                <div class="meals_starter_single meals_single">
+                                    <div class="meals_info">
+                                        <div class="single_meal_header">
+                                                <h3 class="meal_title">${(menu[i].starter[j].title)}</h3>
+                                                <img class="img_location" src="./assets/icon/pin.png" alt="">
+                                                <p>${menu[i].starter[j].country}</p>
+                                        </div>
+                                        <div class="meal_ingredients">${ingredientsArrayStyled}</div>
+                                        <div class="meal_price">${(menu[i].starter[j].price).toFixed(2)} €</div>
+                                    </div>
+                                    <div class="count_and_add">
+                                        <div class="count_this_menu">33</div>
+                                        <div class="meal_add_remove_cart" id="meal_add_remove_cart" onclick="saveMealInfo('${i}', 'starter', '${j}')">+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="main" class="meal_type main">
+                            <div class="meal_type_header">
+                                <img src="./assets/img/noodles-3557592_1280 (1).jpg" alt="Hauptspeise">
+                                <h2>Hauptgang</h2>
+                            </div>
+                            <div id="meals_main" class="meals_main">
+
+                            </div>
+                        </div>
+                        <div id="dessert" class="meal_type dessert">
+                            <div class="meal_type_header">
+                                <img src="./assets/img/food-5158707_1280.jpg" alt="Dessert">
+                                <h2>Dessert</h2>
+                            </div>
+                            <div id="meals_dessert" class="meals_dessert">
+
+                            </div>
+                        </div>
+                        <div id="drinks" class="meal_type drinks">
+                            <div class="meal_type_header">
+                                <img src="./assets/img/drink-1532300_1280.jpg" alt="Getränk">
+                                <h2>Drinks</h2>
+                            </div>
+                            <div id="meals_drinks" class="meals_drinks">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart_small">
+                    <div class="content_cart">
+                        <h2>Warenkorb</h2>
+                        <div id="cart_empty" class="cart_empty">
+                            Dein Warenkorb ist leer. Füge leckere Gerichte aus der Karte hinzu.
+                        </div>
+                        <div id="menues_in_cart" class="menues_in_cart">
+                            <div class="menu_in_cart">
+                                <div class="menu_cart_title">Titel</div>
+                                <div class="add_remove_line">
+                                    <div class="meal_add_remove_inside_cart" onclick="changeQtyInsideCart(event, -1)">
+                                        -
+                                    </div>
+                                    <span class="count">3</span>
+                                    <div class="meal_add_remove_inside_cart" onclick="changeQtyInsideCart(event, 1)">
+                                        +
+                                    </div>
+                                    <div class="price">13,50 €</div>
+                                    <div onclick="deleteFromCart(event)" class="meal_add_remove_inside_cart delete_from_cart">
+                                        <img class="basket" src="./assets/icon/basket.png" alt="">
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="menu_in_cart">
+                                <div class="menu_cart_title">Titel</div>
+                                <div class="add_remove_line">
+                                    <div class="meal_add_remove_inside_cart" onclick="changeQtyInsideCart(event, -1)">
+                                        -
+                                    </div>
+                                    <span class="count">3</span>
+                                    <div class="meal_add_remove_inside_cart" onclick="changeQtyInsideCart(event, 1)">
+                                        +
+                                    </div>
+                                    <div class="price">13,50 €</div>
+                                    <div onclick="deleteFromCart(event)" class="meal_add_remove_inside_cart delete_from_cart">
+                                        <img class="basket" src="./assets/icon/basket.png" alt="">
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="menu_in_cart">
+                                <div class="menu_cart_title">Titel</div>
+                                <div class="add_remove_line">
+                                    <div class="meal_add_remove_inside_cart" onclick="changeQtyInsideCart(event, -1)">
+                                        -
+                                    </div>
+                                    <span class="count">3</span>
+                                    <div class="meal_add_remove_inside_cart" onclick="changeQtyInsideCart(event, 1)">
+                                        +
+                                    </div>
+                                    <div class="price">13,50 €</div>
+                                    <div onclick="deleteFromCart(event)" class="meal_add_remove_inside_cart delete_from_cart">
+                                        <img class="basket" src="./assets/icon/basket.png" alt="">
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="menu_in_cart">
+                                <div class="menu_cart_title">Titel</div>
+                                <div class="add_remove_line">
+                                    <div class="meal_add_remove_inside_cart" onclick="changeQtyInsideCart(event, -1)">
+                                        -
+                                    </div>
+                                    <span class="count">3</span>
+                                    <div class="meal_add_remove_inside_cart" onclick="changeQtyInsideCart(event, 1)">
+                                        +
+                                    </div>
+                                    <div class="price">13,50 €</div>
+                                    <div onclick="deleteFromCart(event)" class="meal_add_remove_inside_cart delete_from_cart">
+                                        <img class="basket" src="./assets/icon/basket.png" alt="">
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="menu_in_cart">
+                                <div class="menu_cart_title">Titel</div>
+                                <div class="add_remove_line">
+                                    <div class="meal_add_remove_inside_cart" onclick="changeQtyInsideCart(event, -1)">
+                                        -
+                                    </div>
+                                    <span class="count">3</span>
+                                    <div class="meal_add_remove_inside_cart" onclick="changeQtyInsideCart(event, 1)">
+                                        +
+                                    </div>
+                                    <div class="price">13,50 €</div>
+                                    <div onclick="deleteFromCart(event)" class="meal_add_remove_inside_cart delete_from_cart">
+                                        <img class="basket" src="./assets/icon/basket.png" alt="">
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="cart_calc">
+                            <div class="switch_delivery_type">
+                                <label onclick="" class="switch">
+                                    <input id="deliveryOrPickup" type="checkbox">
+                                    <div class="switch_ground">
+                                        <span>Lieferung</span>
+                                        <span>Abholung</span>
+                                    </div>	  
+                                </label>
+                                <div class="deliverytime_ctn">
+                                    <img src="./assets/icon/deliverytime.png" alt="Sanduhr">
+                                    <span id="deliverytime">ca. 20 min</span>
+                                </div>
+                            </div>
+                            <div class="sum_section">
+                                <div class="sum">
+                                    <span class="current_sum_title">Bestellwert</span>
+                                    <span id="min_sum_text" class="min_sum_text"></span>
+                                    <span id="current_sum" class="current_sum"></span>
+                                </div>
+                                <div class="sum">
+                                    <span class="delivery_sum_title">Lieferkosten</span>
+                                    <span id="delivery_sum" class="delivery_sum"></span>
+                                </div>
+                                <div class="sum">
+                                    <span class="total_sum_title">Gesamtpreis</span>
+                                    <span id="total_sum" class="total_sum"></span>
+                                </div>
+                            </div>
+                            <div class="send_order_ctn">
+                                <button onclick="" class="send_order" type="submit">bestellen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <span class="content90">© Sabrina Fritz 2024</span>
+        </footer>
+        <div class="cart_full_screen">
+            <div class="content_cart">
+                <h2>Warenkorb</h2>
+                <div id="cart_empty" class="cart_empty">
+                    Dein Warenkorb ist leer. Füge leckere Gerichte aus der Karte hinzu.
+                </div>
+                <div id="menues_in_cart" class="menues_in_cart">
+
+                </div>
+                <div class="cart_calc">
+                    <div class="switch_delivery_type">
+                        <label onclick="" class="switch">
+                            <input id="deliveryOrPickup" type="checkbox">
+                            <div class="switch_ground">
+                                <span>Lieferung</span>
+                                <span>Abholung</span>
+                            </div>	  
+                        </label>
+                        <div class="deliverytime_ctn">
+                            <img src="./assets/icon/deliverytime.png" alt="Sanduhr">
+                            <span id="deliverytime">ca. 20 min</span>
+                        </div>
+                    </div>
+                    <div class="sum_section">
+                        <div class="sum">
+                            <span class="current_sum_title">Bestellwert</span>
+                            <span id="min_sum_text" class="min_sum_text"></span>
+                            <span id="current_sum" class="current_sum"></span>
+                        </div>
+                        <div class="sum">
+                            <span class="delivery_sum_title">Lieferkosten</span>
+                            <span id="delivery_sum" class="delivery_sum"></span>
+                        </div>
+                        <div class="sum">
+                            <span class="total_sum_title">Gesamtpreis</span>
+                            <span id="total_sum" class="total_sum"></span>
+                        </div>
+                    </div>
+                    <div class="send_order_ctn">
+                        <button onclick="" class="send_order" type="submit">bestellen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="choose_continent" class="choose_continent">
+                <div class="continent_link_ctn">
+                    <a class="continent_link" id="continent_all" onclick="setMenues()" href="index.html">alle</a>
+                    <a class="continent_link" id="continent_europa" onclick="filterMenues(0)" href="#top_position">Europa</a>
+                    <a class="continent_link" id="continent_asien" onclick="filterMenues(1)" href="#top_position">Asien</a>
+                    <a class="continent_link" id="continent_africa" onclick="filterMenues(2)" href="#top_position">Afrika</a>
+                    <a class="continent_link" id="continent_northamerica" onclick="filterMenues(3)" href="#top_position">Nordamerika</a>
+                    <a class="continent_link" id="continent_southamerica" onclick="filterMenues(4)" href="#top_position">Südamerika</a>
+                    <a class="continent_link" id="continent_oceaniea" onclick="filterMenues(5)" href="#top_position">Ozeanien</a>
+            </div>
+        </div>
+        <div onclick="" id="cart_icon_with_count" class="cart_or_home_button content90">
+            <img src="./assets/icon/cart.png" alt="Einkaufswagen">
+            <div id="count_in_cart" class="count_in_cart"></div>
+        </div>
+        <div onclick="" id="back_to_start_icon" class="cart_or_home_button content90" >
+            <a href="index.html"><img src="./assets/icon/home.png" alt="Home Icon"></a>
+        </div>
+        <div id="rating_ctn" class="rating_ctn">
+            <div class="rating">
+                <div class="rating_header">
+                    <h2>Taste The World</h2>
+                    <div class="rating_stars_sum">
+                        <img src="./assets/icon/star.png" alt="gelber Stern">
+                        <span>4,6 / 5 (23)</span>
+                    </div>
+                </div>
+                <div id="rating_main" class="rating_main">
+                    <!-- <div class="single_rating">
+                        <div class="rating_details">
+                            <div class="rating_guest">
+                                <img src="./assets/icon/star.png" alt="gelber Stern">
+                                <span>5 / 5</span>
+                                Sabrina Fritz, 14.09.2024
+                            </div>
+                        </div>
+                        <div class="rating_text">
+                            "Das beste Restaurant in der Stadt für internationale Küche. Die Auswahl ist riesig, und jedes Gericht ist mit viel Liebe zubereitet!"
+                        </div>
+                    </div>
+                    <div class="single_rating">
+                        <div class="rating_details">
+                            <div class="rating_guest">
+                                <img src="./assets/icon/star.png" alt="gelber Stern">
+                                <span>5 / 5</span>
+                                Sabrina Fritz, 14.09.2024
+                            </div>
+                        </div>
+                        <div class="rating_text">
+                            "Das beste Restaurant in der Stadt für internationale Küche. Die Auswahl ist riesig, und jedes Gericht ist mit viel Liebe zubereitet!"
+                        </div>
+                    </div>
+                    <div class="single_rating">
+                        <div class="rating_details">
+                            <div class="rating_guest">
+                                <img src="./assets/icon/star.png" alt="gelber Stern">
+                                <span>5 / 5</span>
+                                Sabrina Fritz, 14.09.2024
+                            </div>
+                        </div>
+                        <div class="rating_text">
+                            "Das beste Restaurant in der Stadt für internationale Küche. Die Auswahl ist riesig, und jedes Gericht ist mit viel Liebe zubereitet!"
+                        </div>
+                    </div>
+                    <div class="single_rating">
+                        <div class="rating_details">
+                            <div class="rating_guest">
+                                <img src="./assets/icon/star.png" alt="gelber Stern">
+                                <span>5 / 5</span>
+                                Sabrina Fritz, 14.09.2024
+                            </div>
+                        </div>
+                        <div class="rating_text">
+                            "Das beste Restaurant in der Stadt für internationale Küche. Die Auswahl ist riesig, und jedes Gericht ist mit viel Liebe zubereitet!"
+                        </div>
+                    </div>
+                    <div class="single_rating">
+                        <div class="rating_details">
+                            <div class="rating_guest">
+                                <img src="./assets/icon/star.png" alt="gelber Stern">
+                                <span>5 / 5</span>
+                                Sabrina Fritz, 14.09.2024
+                            </div>
+                        </div>
+                        <div class="rating_text">
+                            "Das beste Restaurant in der Stadt für internationale Küche. Die Auswahl ist riesig, und jedes Gericht ist mit viel Liebe zubereitet!"
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <script src="/script/rating.js"></script>
+        <script src="/script/db_rating.js"></script>
+    </body>
+</html>

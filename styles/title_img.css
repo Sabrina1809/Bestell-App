@@ -1,0 +1,46 @@
+.header_title_img {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    & .img_single_ctn {
+        height: 100px;
+        width: 12.5%;
+        box-shadow: 0 0 2px white inset;
+        background-size: cover;
+    }
+
+    & #title_img_one {
+        background-image: url(../assets/img/rainbow-503134_1280.jpg);
+        background-position: top;
+    }
+    & #title_img_two {
+        background-image: url(../assets/img/road-4645843_1280.jpg);
+        background-position: center;
+    }
+    & #title_img_three {
+        background-image: url(../assets/img/banana-4493420_1280.jpg);
+        background-position: center;
+    }
+    & #title_img_four {
+        background-image: url(../assets/img/lago-federa-3011939_1280.jpg);
+        background-position: right;
+    }
+    & #title_img_five {
+        background-image: url(../assets/img/rice-terraces-1822443_1280.jpg);
+        background-position: center;
+    }
+    & #title_img_six {
+        background-image: url(../assets/img/body-of-water-3049592_1280.jpg);
+        background-position: center;
+    }
+    & #title_img_seven {
+        background-image: url(../assets/img/waterfall-7344396_1280.jpg);
+        background-position: top;
+    }
+    & #title_img_eight {
+        background-image: url(../assets/img/wheat-2549245_1280.jpg);
+        background-position: center;
+    }
+}

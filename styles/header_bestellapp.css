@@ -1,0 +1,75 @@
+header {
+    background-color: var(--bestellapp-orange);
+    width: 100%;
+    box-shadow: 0 0 5px black;
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    & .header_app {
+        height: 47px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & .logo_app {
+            height: 40px;
+            width: auto;
+            border: none;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+               
+        & .burger_closed_ctn {
+            height: 20px;
+            width: 20px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        
+            & .burger_closed_line {
+                width: 100%;
+                height: 3px;
+                background-color: white;
+                border-radius: 5px;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        
+            &:hover .burger_closed_line {
+                box-shadow: 0 0 1px black inset;
+            }
+        }
+    }
+}
+
+@media(max-width: 1000px) {
+    main {
+        & .main_page {
+            & .header_title_img {
+                border-bottom-right-radius: 10px;
+            }
+        }
+    }
+}
+
+@media(max-width: 700px) {
+    header {
+        & .header_app {
+            height: 47px;
+            & .logo_app {
+                height: 40px;
+            }
+            & .burger_closed_ctn {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}
