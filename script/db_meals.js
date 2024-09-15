@@ -1,5 +1,6 @@
-  const menu = {
-    Europa: {
+  const menu = [
+    {
+        name: "Europa",
         starter: [
             { title: "Bruschetta", ingredients: ["Tomaten", "Knoblauch", "Basilikum"], country: "Italien", price: 5.00, quantity: 0, id: "menu0starter0" },
             { title: "Spanische Tortilla", ingredients: ["Kartoffeln", "Eier", "Zwiebeln"], country: "Spanien", price: 6.00, quantity: 0, id: "menu0starter1" },
@@ -22,7 +23,8 @@
             { title: "Kölsch", ingredients: ["Gerste"], country: "Deutschland", price: 4.00, quantity: 0, id: "menu0drinks1" }
         ]
     },
-    Asien: {
+    {
+        name: "Asien",
         starter: [
             { title: "Edamame", ingredients: ["Sojabohnen"], country: "Japan", price: 4.00, quantity: 0, id: "menu1starter0" },
             { title: "Frühlingsrollen", ingredients: ["Gemüse", "Reispapier"], country: "Vietnam", price: 5.00, quantity: 0, id: "menu1starter1" },
@@ -45,7 +47,8 @@
             { title: "Bubble Tea", ingredients: ["Tee", "Tapioka", "Milch"], country: "Taiwan", price: 6.00, quantity: 0, id: "menu1drinks1" }
         ]
     },
-    Afrika: {
+    {
+        name: "Afrika",
         starter: [
             { title: "Bunny Chow", ingredients: ["Brot", "Curry"], country: "Südafrika", price: 7.00, quantity: 0, id: "menu2starter0" },
             { title: "Samosa", ingredients: ["Teig", "Gemüse"], country: "Kenya", price: 5.00, quantity: 0, id: "menu2starter1" },
@@ -68,7 +71,8 @@
             { title: "Palm Wine", ingredients: ["Palmensaft"], country: "Nigeria", price: 8.00, quantity: 0, id: "menu2drinks1" }
         ]
     },
-    Nordamerika: {
+    {
+        name: "Nordamerika",
         starter: [
             { title: "Buffalo Wings", ingredients: ["Hähnchenflügel", "Buffalo Sauce"], country: "USA", price: 8.00, quantity: 0, id: "menu3starter0" },
             { title: "Poutine", ingredients: ["Pommes", "Käse", "Bratensauce"], country: "Kanada", price: 7.00, quantity: 0, id: "menu3starter1" },
@@ -91,7 +95,8 @@
             { title: "Root Beer", ingredients: ["Kräuter", "Zucker"], country: "USA", price: 3.00, quantity: 0, id: "menu3drinks1" }
         ]
     },
-    Südamerika: {
+    {
+        name: "Südamerika",
         starter: [
             { title: "Ceviche", ingredients: ["Fisch", "Limettensaft", "Zwiebeln"], country: "Peru", price: 9.00, quantity: 0, id: "menu4starter0" },
             { title: "Empanadas", ingredients: ["Teig", "Fleisch", "Gewürze"], country: "Argentinien", price: 7.00, quantity: 0, id: "menu4starter1" },
@@ -114,7 +119,8 @@
             { title: "Chicha Morada", ingredients: ["Lila Mais", "Ananas", "Zimt"], country: "Peru", price: 5.00, quantity: 0, id: "menu4drinks1" }
           ]
     },
-    Ozeanien: {
+    {
+        name: "Ozeanien",
         starter: [
             { title: "Pavlova", ingredients: ["Eier", "Zucker", "Früchte"], country: "Neuseeland", price: 6.00, quantity: 0, id: "menu5starter0" },
             { title: "Meat Pie", ingredients: ["Fleisch", "Teig"], country: "Australien", price: 7.00, quantity: 0, id: "menu5starter1" },
@@ -137,7 +143,7 @@
             { title: "Bundaberg Ginger Beer", ingredients: ["Ingwer", "Zucker"], country: "Australien", price: 3.50, quantity: 0, id: "menu5drinks1" }
         ]
     }
-};
+  ];
 
 
 console.log(menu)

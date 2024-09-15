@@ -117,6 +117,10 @@
                     border-bottom-right-radius: 10px;
                 }
             }
+            & .meals_single {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
         }
     }
 }

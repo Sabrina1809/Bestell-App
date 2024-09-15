@@ -225,7 +225,4 @@
     .cart_small {
         display: none;
     }
-    .cart_full_screen {
-        display: flex;
-    }
 }
