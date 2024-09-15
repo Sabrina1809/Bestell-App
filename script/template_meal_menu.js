@@ -14,6 +14,7 @@ let mealTypes = [
 
 function renderMeals() {
     clearSections();
+    document.getElementById("continent_title").innerHTML = "alle";
     for (let c = 0; c < menu.length; c++) {
         for (let t = 0; t < mealTypes.length; t++) {
             for (let n = 0; n < menu[c][mealTypes[t]].length; n++) {

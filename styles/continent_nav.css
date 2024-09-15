@@ -7,6 +7,7 @@
     left: 0;
     background-color: rgba(0,0,0,0.75);
     z-index: 15;
+    cursor: default;
 
     & .continent_link_ctn {
         background-color: white;
@@ -19,6 +20,7 @@
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
+        cursor: default;
 
         & a {
             color: black;
@@ -28,14 +30,18 @@
             border-bottom: 1px solid rgba(0,0,0,0.25);
             text-decoration: none;
             transition: all 0.2s ease-in-out;
+            cursor: pointer;
             &:hover {
                 padding-left: 50px;
-                text-shadow: 0 0 2px var(--bestellapp-orange);
+                text-shadow: 0 0 1px var(--bestellapp-orange);
             }
             &:last-child {
                 border: none;
             }
         }
+    }
+    &:hover {
+        cursor: pointer;
     }
 }
 
@@ -53,6 +59,9 @@
         .continent_link_ctn {
             width: 90%;
             right: 5%;
+            & a:hover {
+                padding-left: 10px;
+            }
         }
     }
 }

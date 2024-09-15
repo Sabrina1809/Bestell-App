@@ -61,16 +61,16 @@
                         <div id="choose_meal_type" class="choose_meal_type">
                             <img id="arrowOpenClose" src="./assets/icon/arrow.png" alt="Pfeil nach rechts">
                             <div class="choose_meal_type_option">
-                                <a class="active" id="choose_meal_type_option_starter" href="#starter">Vorspeise</a>
+                                <a onclick="jumpToMealType('choose_meal_type_option_starter')" class="choose_meal_type_option_link" id="choose_meal_type_option_starter" href="#starter">Vorspeise</a>
                             </div>
                             <div class="choose_meal_type_option">
-                                <a id="choose_meal_type_option_main"  href="#main">Hauptgang</a>
+                                <a onclick="jumpToMealType('choose_meal_type_option_main')" class="choose_meal_type_option_link" id="choose_meal_type_option_main"  href="#main">Hauptgang</a>
                             </div>
                             <div  class="choose_meal_type_option">
-                                <a id="choose_meal_type_option_dessert" href="#dessert">Dessert</a>
+                                <a onclick="jumpToMealType('choose_meal_type_option_dessert')" class="choose_meal_type_option_link" id="choose_meal_type_option_dessert" href="#dessert">Dessert</a>
                             </div>
                             <div class="choose_meal_type_option">
-                                <a id="choose_meal_type_option_drinks" href="#drinks">Getränke</a>
+                                <a onclick="jumpToMealType('choose_meal_type_option_drinks')" class="choose_meal_type_option_link" id="choose_meal_type_option_drinks" href="#drinks">Getränke</a>
                             </div>
                         </div>
                     </div>
@@ -351,5 +351,6 @@
         <script src="./script/db_meals.js"></script>
         <script src="./script/template_meal_menu.js"></script>
         <script src="./script/continent_filter.js"></script>
+        <script src="./script/meal_filter.js"></script>
     </body>
 </html>

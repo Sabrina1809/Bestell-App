@@ -30,5 +30,14 @@ function filterContinent(continent) {
                 </div>`
         }
     }
+
     document.getElementById("choose_continent").style.display = "none";
+    document.getElementById("continent_title").innerHTML = menu[continent].name;
+    scrollToTop();
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+    });
 }
