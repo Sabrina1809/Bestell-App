@@ -54,23 +54,23 @@
                         <div id="choose_continent_menu_closed" onclick="" class="choose_continent_menu_closed">
                             <img id="arrowOpenClose" src="./assets/icon/arrow.png" alt="Pfeil nach rechts">
                             <div onclick="openContinentav()" id="continent_filter" class="continent_filter">
-                                <p id="continent_title">*hinzufügen*</p>
+                                <p id="continent_title">alle</p>
                                 <img class="filter" id="filter" src="./assets/icon/filter.png" alt="Trichter">
                             </div>
                         </div>
                         <div id="choose_meal_type" class="choose_meal_type">
                             <img id="arrowOpenClose" src="./assets/icon/arrow.png" alt="Pfeil nach rechts">
                             <div class="choose_meal_type_option">
-                                <a onclick="jumpToMealType('choose_meal_type_option_starter')" class="choose_meal_type_option_link" id="choose_meal_type_option_starter" href="#starter">Vorspeise</a>
+                                <a class="choose_meal_type_option_link" id="choose_meal_type_option_starter" href="#starter">Vorspeise</a>
                             </div>
                             <div class="choose_meal_type_option">
-                                <a onclick="jumpToMealType('choose_meal_type_option_main')" class="choose_meal_type_option_link" id="choose_meal_type_option_main"  href="#main">Hauptgang</a>
+                                <a class="choose_meal_type_option_link" id="choose_meal_type_option_main"  href="#main">Hauptgang</a>
                             </div>
                             <div  class="choose_meal_type_option">
-                                <a onclick="jumpToMealType('choose_meal_type_option_dessert')" class="choose_meal_type_option_link" id="choose_meal_type_option_dessert" href="#dessert">Dessert</a>
+                                <a class="choose_meal_type_option_link" id="choose_meal_type_option_dessert" href="#dessert">Dessert</a>
                             </div>
                             <div class="choose_meal_type_option">
-                                <a onclick="jumpToMealType('choose_meal_type_option_drinks')" class="choose_meal_type_option_link" id="choose_meal_type_option_drinks" href="#drinks">Getränke</a>
+                                <a class="choose_meal_type_option_link" id="choose_meal_type_option_drinks" href="#drinks">Getränke</a>
                             </div>
                         </div>
                     </div>
@@ -351,6 +351,6 @@
         <script src="./script/db_meals.js"></script>
         <script src="./script/template_meal_menu.js"></script>
         <script src="./script/continent_filter.js"></script>
-        <script src="./script/meal_filter.js"></script>
+        <script src="./script/highlight_meal_type.js"></script>
     </body>
 </html>
