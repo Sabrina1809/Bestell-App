@@ -76,7 +76,7 @@ h1 {
 .choose_options {
     background-color: white;
     position: sticky;
-    top: 84px;
+    top: 82px;
     z-index: 5;
     & .choose_continent_menu_closed {
         display: flex;
@@ -134,13 +134,8 @@ h1 {
             padding-top: 5px;
             padding-bottom: 5px;
         }
-        & .choose_continent {
-            top: 70px;
-            padding-bottom: 5px;
-        }
-        & .choose_meal_type {
-            top: 98px;
-            padding-top: 5px;
+        & .choose_options {
+            top: 74px;
         }
     }
 }

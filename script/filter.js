@@ -56,8 +56,8 @@ function filterContinentAll() {
                                 <img class="img_location" src="./assets/icon/pin.png" alt="Pin">
                                 <p>${menu[c][mealTypes[t]][n].country}</p>
                         </div>
-                        <div class="meal_ingredients">${menu[c][mealTypes[t]][n].ingredients}</div>
-                        <div class="meal_price">${(menu[c][mealTypes[t]][n].price).toFixed(2)} €</div>
+                        <div class="meal_ingredients">${menu[c][mealTypes[t]][n].ingredients.join(", ")}</div>
+                        <div class="meal_price">${(menu[c][mealTypes[t]][n].price).toFixed(2).replace(".", ",")} €</div>
                     </div>
                     <div class="count_and_add">
                         <div id="count_${menu[c][mealTypes[t]][n].id}" class="count_this_menu">${menu[c][mealTypes[t]][n].quantity}</div>
@@ -87,8 +87,8 @@ function filterContinentSingle(c) {
                                 <img class="img_location" src="./assets/icon/pin.png" alt="Pin">
                                 <p>${menu[c][mealTypes[t]][n].country}</p>
                         </div>
-                        <div class="meal_ingredients">${menu[c][mealTypes[t]][n].ingredients}</div>
-                        <div class="meal_price">${(menu[c][mealTypes[t]][n].price).toFixed(2)} €</div>
+                        <div class="meal_ingredients">${menu[c][mealTypes[t]][n].ingredients.join(", ")}</div>
+                        <div class="meal_price">${(menu[c][mealTypes[t]][n].price).toFixed(2).replace(".", ",")} €</div>
                     </div>
                     <div class="count_and_add">
                         <div id="count_${menu[c][mealTypes[t]][n].id}" class="count_this_menu">${menu[c][mealTypes[t]][n].quantity}</div>

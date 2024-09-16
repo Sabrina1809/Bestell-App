@@ -1,5 +1,6 @@
 function openCloseCart() {
     let cartFullScreen = document.getElementById("cart_full_screen");
+    showMealsInCart();
     if(cartFullScreen.style.display == "flex") {
         cartFullScreen.style.display = "none";
     } else {
@@ -52,10 +53,11 @@ function saveMealsForCart(continent, mealType, mealNo) {
 
 function showMealsInCart() {
     document.getElementById("menues_in_cart").innerHTML = "";
+    document.getElementById("menues_in_cart_overlay").innerHTML = "";
     console.log(mealsInCart)
     for (let i = 0; i < mealsInCart.length; i++) {
         let price = (mealsInCart[i].quantity * mealsInCart[i].price).toFixed(2).replace(".", ",");
-        document.getElementById("menues_in_cart").innerHTML += `
+        let innerHTML = `
         <div class="menu_in_cart" id="cart_${mealsInCart[i].id}">
             <div class="menu_cart_title">${mealsInCart[i].title}</div>
             <div class="add_remove_line">
@@ -72,6 +74,8 @@ function showMealsInCart() {
                 </div>
                 </div>
         </div>`
+        document.getElementById("menues_in_cart").innerHTML += innerHTML;
+        document.getElementById("menues_in_cart_overlay").innerHTML += innerHTML;
     }
 }
 

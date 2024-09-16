@@ -34,6 +34,10 @@
                     flex-direction: row;
                     align-items: baseline;
                     margin-bottom: 10px;
+                    & .meal_title {
+                        width: max-content;
+                        max-width: 200px;
+                    }
                     & .img_location {
                         height: 14px;
                         width: 14px;
@@ -55,6 +59,7 @@
             }
             & .count_and_add {
                 position: relative;
+                /* margin-right: -20px; */
                 height: 60px;
                 width: 60px;
                 & .count_this_menu {
@@ -121,6 +126,18 @@
             & .meals_single {
                 border-top-right-radius: 10px;
                 border-bottom-right-radius: 10px;
+            }
+        }
+    }
+}
+
+@media(max-width: 600px) {
+    .meals_ctn {
+        & .meal_type {
+            & .meals_single {
+                & .count_and_add {
+                    right: -20px;
+                }
             }
         }
     }
