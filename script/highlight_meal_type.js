@@ -14,7 +14,14 @@ const links = [
 
 window.onscroll = function() {
     sections.forEach((section, index) => {
-        if (isInViewport(section)) {
+        if (isInViewportBig(section)) {
+        links[index].classList.add('active');
+        } else {
+        links[index].classList.remove('active');
+        }
+    });
+    sections.forEach((section, index) => {
+        if (isInViewportSmall(section)) {
         links[index].classList.add('active');
         } else {
         links[index].classList.remove('active');
@@ -22,8 +29,24 @@ window.onscroll = function() {
     });
 };
 
-function isInViewport(section) {
+function isInViewportBig(section) {
     const rect = section.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
-    return rect.top < viewportHeight && rect.bottom >= 0;
+
+    if (rect.height > viewportHeight) {
+        return (
+            rect.top <= viewportHeight - 240 && rect.bottom >= 240
+        );
+    } else {
+        return (
+            rect.top >= 240 &&
+            rect.bottom <= viewportHeight
+        );
+    }
+}
+
+function isInViewportSmall(section) {
+    const rect = section.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    return rect.top < (viewportHeight - 240) && rect.bottom >= 240;
 }

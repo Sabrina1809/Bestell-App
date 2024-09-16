@@ -25,6 +25,7 @@ function saveMealInfo(e, plusMinus1) {
         showCountInMeal(newQty, mealId)
         saveMealsForCart(continent, mealType, mealNo, plusMinus1);
         showMealsInCart(continent, mealType, mealNo)
+        // calcPrice()
     }
 }
 
@@ -73,7 +74,6 @@ function showMealsInCart() {
         </div>`
     }
 }
-
 
 function deleteFromCart(e) {
     let clickedButtonId = e.target.id;
