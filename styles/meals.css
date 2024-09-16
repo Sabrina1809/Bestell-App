@@ -71,6 +71,7 @@
                     background-color: rgba(255, 255, 255, 0.5);
                     color: black;
                     opacity: 0.5;
+                    display: none;
                 }
                 & .meal_add_remove_cart {
                     position: absolute;
