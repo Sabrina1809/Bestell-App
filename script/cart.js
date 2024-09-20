@@ -1,22 +1,14 @@
-// function openCloseCart() {
-//     let cartFullScreen = document.getElementById("cart_small");
-//     let cardContent = document.getElementById("content_cart");
-//     let restaurantLogo = document.getElementById("logo_restaurant");
-//     showMealsInCart();
-//     if(cartFullScreen.style.display == "flex") {
-//         cartFullScreen.style.display = "none";
-//         cartFullScreen.style.backdropFilter = "none";
-//         restaurantLogo.style.opacity = 1;
-//     } else {
-//         cartFullScreen.style.display = "flex";
-//         cartFullScreen.style.backdropFilter = "blur(5px)";
-//         restaurantLogo.style.opacity = 0;
-//     }
-// }
+let cartWithBackground = document.getElementById("cart_small");
+let restaurantLogo = document.getElementById("logo_restaurant");
 
-function closeCart() {
-    document.getElementById("cart_small").style.display = "none";
-    document.getElementById("cart_small").style.backdropFilter = "0px";
+function openCloseCart() {
+    if (cartWithBackground.style.display == "none") {
+        cartWithBackground.style.display = "flex";
+        restaurantLogo.style.display = "none";
+    } else {
+        cartWithBackground.style.display = "none";
+        restaurantLogo.style.display = "flex";
+    }
 }
 
 function saveMealInfo(e, plusMinus1) {
@@ -48,12 +40,12 @@ let mealsWithQuantity = []
 
 function saveMealForCart(continent, mealType, mealNo, newQty) {
     let indexOfMealInCart = mealsWithQuantity.indexOf(menu[continent][mealType][mealNo])
-    console.log(indexOfMealInCart)
     if (indexOfMealInCart !== -1) {
         mealsWithQuantity[indexOfMealInCart].quantity = newQty;
     } else {
         mealsWithQuantity.push(menu[continent][mealType][mealNo])
     }
+    setCountToBasket()
 }
 
 function showCartContent() {
@@ -64,12 +56,12 @@ function showCartContent() {
         </div>`
     } else {
         showMealsInCart();
+        calcOrderSum();
     }
 }
 
 function showMealsInCart() {
     document.getElementById("menues_in_cart").innerHTML = "";
-    console.log(mealsWithQuantity)
     for (let i = 0; i < mealsWithQuantity.length; i++) {
         let price = (mealsWithQuantity[i].quantity * mealsWithQuantity[i].price).toFixed(2).replace(".", ",");
         let innerHTML = `
@@ -104,12 +96,12 @@ function addRemoveOne(e, plusMinus1) {
     loadContinentMenu(continentToLoad)
     qtyNullRemoveFromCart(newQty, continent, mealType, mealNo)
     showCartContent()
+    setCountToBasket()
 }
 
 function qtyNullRemoveFromCart(newQty, continent, mealType, mealNo) {
     if (newQty == 0) {
         let indexToChangeQty =  mealsWithQuantity.indexOf(menu[continent][mealType][mealNo]);
-        console.log(indexToChangeQty)
         mealsWithQuantity.splice(indexToChangeQty, 1)
     }
 }
@@ -159,11 +151,50 @@ function deleteFromCart(e) {
     let mealType = mealId.slice(5, -1);
     let mealNo = mealId.charAt(mealId.length - 1);
     let indexToDeleteFromCart =  mealsWithQuantity.indexOf(menu[continent][mealType][mealNo]);
-    console.log(indexToDeleteFromCart)
     mealsWithQuantity.splice(indexToDeleteFromCart, 1)
     menu[continent][mealType][mealNo].quantity = 0;
 
     let continentToLoad = checkCurrentContinent();
     loadContinentMenu(continentToLoad)
     showCartContent()
+    setCountToBasket()
+}
+
+function setCountToBasket() {
+    let sum = 0;
+    for (let i = 0; i < mealsWithQuantity.length; i++) {
+        sum += mealsWithQuantity[i].quantity
+    }
+    document.getElementById("count_in_cart").innerHTML = `${sum}`
+}
+
+function calcOrderSum() {
+    let orderSum = 0;
+    for (let i = 0; i < mealsWithQuantity.length; i++) {
+        orderSum += (mealsWithQuantity[i].quantity * mealsWithQuantity[i].price)
+    }
+    document.getElementById("current_sum").innerHTML = `${orderSum.toFixed(2).replace(".", ",")} €`;
+    
+    calcTotalSum(orderSum)
+}
+
+function calcDeliveryPrice(e) {
+    let delivery = 5.90;
+    let pickup = 0.00;
+    if (e.target.checked == true) {
+        document.getElementById("delivery_sum").innerHTML = `${delivery.toFixed(2).replace(".", ",")} €`
+        document.getElementById("deliverytime").innerHTML = `ca. 45 min`
+    } else {
+        document.getElementById("delivery_sum").innerHTML = `${pickup.toFixed(2).replace(".", ",")} €`
+        document.getElementById("deliverytime").innerHTML = `ca. 20 min`
+    }
+}
+
+function calcTotalSum(orderSum) {
+
+    let deliveryPrice = document.getElementById("delivery_sum").innerHTML;
+    deliveryPrice = Number(deliveryPrice.slice(0, -2).replace(",", "."))
+    let totalSum = orderSum + deliveryPrice
+    console.log(orderSum, deliveryPrice, totalSum)
+    document.getElementById("total_sum").innerHTML = `${totalSum.toFixed(2).replace(".", ",")} €`
 }

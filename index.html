@@ -143,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-                <div onclick="" id="cart_small" class="cart_small">
+                <div id="cart_small" class="cart_small">
                     <div id="content_cart" class="content_cart">
                         <h2>Warenkorb</h2>
                         <div id="menues_in_cart" class="menues_in_cart">
@@ -169,7 +169,7 @@
                         </div>
                         <div class="cart_calc">
                             <div class="switch_delivery_type">
-                                <label onclick="" class="switch">
+                                <label onclick="calcDeliveryPrice(event)" id="switch" class="switch">
                                     <input id="deliveryOrPickup" type="checkbox">
                                     <div class="switch_ground">
                                         <span>Lieferung</span>
@@ -185,15 +185,15 @@
                                 <div class="sum">
                                     <span class="current_sum_title">Bestellwert</span>
                                     <span id="min_sum_text" class="min_sum_text"></span>
-                                    <span id="current_sum" class="current_sum"></span>
+                                    <span id="current_sum" class="current_sum">0,00 €</span>
                                 </div>
                                 <div class="sum">
                                     <span class="delivery_sum_title">Lieferkosten</span>
-                                    <span id="delivery_sum" class="delivery_sum"></span>
+                                    <span id="delivery_sum" class="delivery_sum">0,00 €</span>
                                 </div>
                                 <div class="sum">
                                     <span class="total_sum_title">Gesamtpreis</span>
-                                    <span id="total_sum" class="total_sum"></span>
+                                    <span id="total_sum" class="total_sum">0,00 €</span>
                                 </div>
                             </div>
                             <div class="send_order_ctn">
@@ -264,7 +264,7 @@
         </div>
         <div onclick="openCloseCart()" id="cart_icon_with_count" class="cart_or_home_button content90">
             <img src="./assets/icon/cart.png" alt="Einkaufswagen">
-            <div id="count_in_cart" class="count_in_cart"></div>
+            <div id="count_in_cart" class="count_in_cart">0</div>
         </div>
         <div onclick="" id="back_to_start_icon" class="cart_or_home_button content90" >
             <a href="index.html"><img src="./assets/icon/home.png" alt="Home Icon"></a>
