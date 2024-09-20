@@ -61,7 +61,7 @@ function filterContinentAll() {
                     </div>
                     <div class="count_and_add">
                         <div id="count_${menu[c][mealTypes[t]][n].id}" class="count_this_menu">${menu[c][mealTypes[t]][n].quantity}</div>
-                        <div class="meal_add_remove_cart" id="increase_${menu[c][mealTypes[t]][n].id}" onclick="saveMealInfo(event, 1)">+</div>
+                        <div class="meal_add_remove_cart" id="add_cart_${menu[c][mealTypes[t]][n].id}" onclick="saveMealInfo(event, 1)">+</div>
                     </div>
                 </div>`
             if (menu[c][mealTypes[t]][n].quantity > 0) {
@@ -92,7 +92,7 @@ function filterContinentSingle(c) {
                     </div>
                     <div class="count_and_add">
                         <div id="count_${menu[c][mealTypes[t]][n].id}" class="count_this_menu">${menu[c][mealTypes[t]][n].quantity}</div>
-                        <div class="meal_add_remove_cart" id="increase_${menu[c][mealTypes[t]][n].id}" onclick="saveMealInfo(event, 1)">+</div>
+                        <div class="meal_add_remove_cart" id="add_cart_${menu[c][mealTypes[t]][n].id}" onclick="saveMealInfo(event, 1)">+</div>
                     </div>
                 </div>`
             if (menu[c][mealTypes[t]][n].quantity > 0) {

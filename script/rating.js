@@ -15,7 +15,6 @@ function openRating() {
             ratingCtn.classList.remove("open_soft_rating");
             logoRestaurant.style.opacity = "1";
             cartIcon.style.display = "flex";
-            backToStartIcon.style.display = "flex";
         }
     }
     renderRatings()

@@ -16,6 +16,7 @@ header {
         & .logo_app {
             height: 40px;
             width: auto;
+            max-width: 100%;
             border: none;
             &:hover {
                 cursor: pointer;
