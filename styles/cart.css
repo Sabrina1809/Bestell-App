@@ -243,6 +243,7 @@
             width: 300px;
             left: 50%;
             top: 0px;
+            position: fixed;
             height: calc(100vh - 87px);
             transform: translate(-50%);
         }
