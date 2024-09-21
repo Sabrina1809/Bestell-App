@@ -13,6 +13,7 @@ let mealTypes = [
 ]
 
 function openContinentav() {
+
     document.getElementById("choose_continent").style.display = "flex";
     logoRestaurant.style.display = "none";
     cartIcon.style.display = "none";
@@ -33,6 +34,8 @@ function filterContinent(c) {
         c = c;
         filterContinentSingle(c);
     }
+    logoRestaurant.style.display = "flex";
+    cartIcon.style.display = "flex";
 }
 
 function clearSections() {
@@ -109,3 +112,11 @@ function filterContinentSingle(c) {
     scrollToTop();
 }
 
+function checkIfScrollToTop(x) {
+    let scroll = x
+    if (x === "yes") {
+        window.scrollTo({
+            top: 0,
+        });
+    }
+}
