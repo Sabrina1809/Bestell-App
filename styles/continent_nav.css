@@ -6,7 +6,7 @@
     top: 47px;
     left: 0;
     background-color: rgba(0,0,0,0.75);
-    z-index: 15;
+    z-index: 20;
     cursor: default;
 
     & .continent_link_ctn {

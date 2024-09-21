@@ -144,7 +144,3 @@
         ]
     }
   ];
-
-
-console.log(menu)
-console.table(menu)

@@ -99,6 +99,12 @@ footer {
     }
 }
 
+.open_close_soft {
+    opacity: 1;
+    z-index: 30;
+    transition: all 0.2s ease-in-out;
+}
+
 @media(max-width: 1000px) {
     #cart_icon_with_count {
         display: flex;

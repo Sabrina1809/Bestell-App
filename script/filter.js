@@ -14,10 +14,14 @@ let mealTypes = [
 
 function openContinentav() {
     document.getElementById("choose_continent").style.display = "flex";
+    logoRestaurant.style.display = "none";
+    cartIcon.style.display = "none";
 
     window.onclick = function(e) {
         if (e.target.id == "choose_continent") {
             document.getElementById("choose_continent").style.display = "none";
+            logoRestaurant.style.display = "flex";
+            cartIcon.style.display = "flex";
         }
     }
 }

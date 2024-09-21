@@ -10,6 +10,13 @@ function openCloseCart() {
     } else {
         cartWithBackground.style.display = "flex";
         restaurantLogo.style.display = "none";
+
+        window.onclick = function(e) {
+            if (e.target.id === "cart_small") {
+                cartWithBackground.style.display = "none";
+                restaurantLogo.style.display = "flex";
+            }
+        }
     }
 }
 

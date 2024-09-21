@@ -5,14 +5,14 @@ const cartIcon = document.getElementById("cart_icon_with_count");
 const backToStartIcon = document.getElementById("back_to_start_icon");
 
 function openRating() {
-    ratingCtn.classList.add("open_soft_rating");
+    ratingCtn.classList.add("open_close_soft");
     logoRestaurant.style.opacity = "0";
     cartIcon.style.display = "none";
     backToStartIcon.style.display = "none";
 
     window.onclick = function(e) {
         if (e.target.id === "rating_ctn") {
-            ratingCtn.classList.remove("open_soft_rating");
+            ratingCtn.classList.remove("open_close_soft");
             logoRestaurant.style.opacity = "1";
             cartIcon.style.display = "flex";
         }
