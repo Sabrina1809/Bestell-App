@@ -10,7 +10,6 @@
         box-shadow: 0 0 2px white inset;
         background-size: cover;
     }
-
     & #title_img_one {
         background-image: url(../assets/img/rainbow-503134_1280.jpg);
         background-position: top;

@@ -21,7 +21,6 @@
         color: var(--bestellapp-orange);
         padding: 40px 15px
     }
-    
     & h2 {
         padding: 10px 0;
         font-weight: 600;
@@ -38,7 +37,6 @@
             width: 250px;
             margin: 0 auto;
         }
-
         & .menu_in_cart {
             padding: 10px;
             background-color: rgba(255, 128, 0, 0.075);
@@ -122,7 +120,7 @@
            display: flex;
            align-items: center;
            justify-content: space-between;
-           .switch { 
+           & .switch { 
                 position: relative;
                 color: white;
                 font-size: 15px;
@@ -184,11 +182,9 @@
                 gap: 10px;
                 padding-top: 3px;
                 justify-content: space-between;
-
                 & .min_sum_text {
                     color: var(--bestellapp-orange);
                 }
-
                 .total_sum_title {
                     font-size: 15px;
                     padding-bottom: 3px;
@@ -199,7 +195,6 @@
         & .send_order_ctn {
             display: flex;
             justify-content: end;
-
             & .send_order {
                 padding: 5px 10px;
                 color: white;
@@ -208,12 +203,10 @@
                 border-radius: 10px;
                 background-color: rgba(255, 128, 0, 0.7);
                 transition: all 0.1s ease-in-out;
-            
                 &:hover {
                     background-color: var(--bestellapp-orange);
                     cursor: pointer;
                 }
-            
                 &:active {
                     box-shadow: 0 0 2px black inset;
                     scale: 0.95;
@@ -244,7 +237,6 @@
         top: 0px;
         bottom: 0px;
         left: 0;
-
         & .content_cart {
             width: 300px;
             left: 50%;
@@ -253,7 +245,6 @@
             position: fixed;
             height: calc(100% - 87px);
             transform: translate(-50%);
-
         }
     }
 }

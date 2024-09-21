@@ -32,7 +32,6 @@ window.onscroll = function() {
 function isInViewportBig(section) {
     const rect = section.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
-
     if (rect.height > viewportHeight) {
         return (
             rect.top <= viewportHeight - 240 && rect.bottom >= 240

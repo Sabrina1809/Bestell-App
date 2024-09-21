@@ -31,7 +31,6 @@
         &:hover {
             cursor: default;
         }
-
         & .rating_header {
             width: 95%;
             margin: 0 auto;
@@ -46,13 +45,11 @@
                 gap: 10px;
             }
         }
-    
         & .rating_main {
             width: 95%;
             min-height: 250px;
             margin: 0 auto;
             overflow-y: scroll;
-    
             & .single_rating {
                 display: flex;
                 flex-direction: column;
@@ -60,13 +57,11 @@
                 border-radius: 10px;
                 background-color: rgba(255, 128, 0, 0.075);
                 margin: 10px 0;
-    
                 & .rating_details {
                     display: flex;
                     align-items: center;
                     justify-content: left;
                     gap: 10px;
-    
                     & .rating_guest {
                         display: flex;
                         font-weight: 600;
@@ -95,7 +90,6 @@
                 }
                 & .rating_stars_sum {
                     font-size: 14px;
-
                     & img {
                         width: 14px;
                         height: 14px;
@@ -114,12 +108,10 @@
                             flex-wrap: wrap;
                             padding-bottom: 0px;
                             gap: 0px;
-
                             & img {
                                 height: 14px;
                                 width: 14px;
                             }
-
                             & span {
                                 margin-left: 10px;
                                 width: 160px;

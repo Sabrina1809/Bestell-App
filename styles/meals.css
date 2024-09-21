@@ -59,7 +59,6 @@
             }
             & .count_and_add {
                 position: relative;
-                /* margin-right: -20px; */
                 height: 60px;
                 width: 60px;
                 & .count_this_menu {
@@ -85,7 +84,6 @@
                     width: 30px;
                     font-size: 26px;
                     font-weight: lighter;
-                    /* padding-bottom: 2px; */
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -97,14 +95,12 @@
                     transition: all 0.1s ease-in-out;
                     right: 20px;
                     bottom: 15px;
-                    
                     &:hover {
                         opacity: 1;
                         cursor: pointer;
                         text-shadow: 0 0 1px var(--bestellapp-orange);
                         box-shadow: 0 0 1px var(--bestellapp-orange) inset; 
                     }
-                
                     &:active {
                         scale: 0.9;
                     }
