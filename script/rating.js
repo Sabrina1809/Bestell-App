@@ -29,7 +29,7 @@ function renderRatings() {
                 <div class="rating_guest">
                     <img src="./assets/icon/star.png" alt="gelber Stern">
                     <span>${reviews[i].stars} / 5</span>
-                    ${reviews[i].name}, ${reviews[i].date}
+                    ${reviews[i].name}, <wbr>${reviews[i].date}
                 </div>
             </div>
             <div class="rating_text">

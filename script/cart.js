@@ -210,7 +210,7 @@ function checkOrderSum() {
 function sendOrder() {
     document.getElementById("content_cart").innerHTML = `
     <div id="order_sent">
-        Vielen Dank für deine Bestellung. Wir bereiten alles frisch zu und wünschen dir schon jetzt einen <br> GUTEN APPETIT! <br> Dein Tast The World-Team
+        Vielen Dank für deine Bestellung.<br>Wir bereiten alles frisch zu und wünschen dir schon jetzt einen <br> GUTEN APPETIT! <br> Dein Tast The World-Team
     </div>`
     document.getElementById("cart_icon_with_count").style.display = "none";
     document.getElementById("back_to_start_icon").style.display = "flex";

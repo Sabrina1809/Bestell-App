@@ -61,7 +61,7 @@
                     width: 30px;
                     font-size: 26px;
                     font-weight: lighter;
-                    padding-bottom: 4px;
+                    /* padding-bottom: 2px; */
                     border-radius: 50%;
                     display: flex;
                     align-items: center;
@@ -99,6 +99,9 @@
                         scale: 0.9;
                     }
                 }
+            }
+            & .delete_from_cart {
+                padding-bottom: 4px;
             }
             &:hover {
                 box-shadow: 0 0 2px var(--bestellapp-orange) inset;
@@ -236,16 +239,19 @@
         backdrop-filter: blur(5px);
         position: fixed;
         width: 100%;
-        top: 45px;
+        top: 0px;
+        bottom: 0px;
         left: 0;
 
         & .content_cart {
             width: 300px;
             left: 50%;
-            top: 0px;
+            top: 47px;
+            bottom: 42px;
             position: fixed;
-            height: calc(100vh - 87px);
+            height: calc(100% - 87px);
             transform: translate(-50%);
+
         }
     }
 }

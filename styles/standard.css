@@ -21,7 +21,7 @@ body {
 }
 
 footer {
-    z-index: 11;
+    z-index: 16;
     text-align: center;
     box-shadow: 0 0 5px black;
     background-color: var(--bestellapp-orange);

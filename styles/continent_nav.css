@@ -2,7 +2,7 @@
     display: none;
     position: fixed;
     width: 100%;
-    height: calc(100vh - 88px);
+    height: calc(100% - 88px);
     top: 47px;
     left: 0;
     background-color: rgba(0,0,0,0.75);
