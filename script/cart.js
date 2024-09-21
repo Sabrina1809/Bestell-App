@@ -2,6 +2,14 @@ let mealsWithQuantity = []
 let cartWithBackground = document.getElementById("cart_small");
 let restaurantLogo = document.getElementById("logo_restaurant");
 
+window.onresize = function() {
+    if (window.innerWidth <= 1000) {
+        cartIcon.style.display = "flex";    
+    } else {
+        cartIcon.style.display = "none";    
+    }
+}
+
 function openCloseCart() {
     if (cartWithBackground.style.display == "flex") {
         cartWithBackground.style.display = "none";

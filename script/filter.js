@@ -18,10 +18,11 @@ function openContinentav() {
     cartIcon.style.display = "none";
 
     window.onclick = function(e) {
+        console.log(e.target.id)
         if (e.target.id == "choose_continent") {
             document.getElementById("choose_continent").style.display = "none";
-            logoRestaurant.style.display = "flex";
-            cartIcon.style.display = "flex";
+            logoRestaurant.style.display = "none";
+            cartIcon.style.display = "none";
         }
     }
 }
@@ -35,7 +36,12 @@ function filterContinent(c) {
     }
     window.scrollTo({
         top: 0,
-    });
+    });  
+    if (window.innerWidth <= 1000) {
+        cartIcon.style.display = "flex";    
+    } else {
+        cartIcon.style.display = "none";    
+    }
 }
 
 function clearSections() {
