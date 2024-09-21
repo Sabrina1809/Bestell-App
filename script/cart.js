@@ -1,7 +1,9 @@
-let cartWithBackground = document.getElementById("cart_small");
-let restaurantLogo = document.getElementById("logo_restaurant");
+let mealsWithQuantity = []
 
 function openCloseCart() {
+    let cartWithBackground = document.getElementById("cart_small");
+    let restaurantLogo = document.getElementById("logo_restaurant");
+
     if (cartWithBackground.style.display == "flex") {
         cartWithBackground.style.display = "none";
         restaurantLogo.style.display = "flex";
@@ -26,8 +28,8 @@ function saveMealInfo(e, plusMinus1) {
 
     }
     saveMealForCart(continent, mealType, mealNo, newQty)
-    // showCountInMeal(newQty, mealId);
     showCartContent()
+    document.getElementById("min_sum_text").innerHTML = "";
 }
 
 function showCountInMeal(newQty, mealId) {
@@ -35,8 +37,6 @@ function showCountInMeal(newQty, mealId) {
         document.getElementById(`count_${mealId}`).style.display = "none";
     } 
 }
-
-let mealsWithQuantity = []
 
 function saveMealForCart(continent, mealType, mealNo, newQty) {
     let indexOfMealInCart = mealsWithQuantity.indexOf(menu[continent][mealType][mealNo])
@@ -159,6 +159,7 @@ function deleteFromCart(e) {
     showCartContent()
     setCountToBasket()
     calcOrderAndTotalSum()
+    document.getElementById("min_sum_text").innerHTML = "";
 }
 
 function setCountToBasket() {
@@ -192,4 +193,27 @@ function calcOrderAndTotalSum() {
     deliveryPrice = Number(deliveryPrice.slice(0, -2).replace(",", "."))
     let totalSum = Number(orderSum + deliveryPrice).toFixed(2).replace(".", ",");
     document.getElementById("total_sum").innerHTML = `${totalSum} €`
+}
+
+function checkOrderSum() {
+    let minOrderSum  = 17.00;
+    let currentOrderSum = document.getElementById("current_sum").innerHTML
+    currentOrderSum = Number(currentOrderSum.slice(0, -2).replace(",", "."));
+    let diff = minOrderSum - currentOrderSum;
+    if (diff > 0) {
+        document.getElementById("min_sum_text").innerHTML = `(${diff.toFixed(2).replace(".", ",")} € zu wenig)`
+    } else {
+        sendOrder()
+    }
+}
+
+function sendOrder() {
+    document.getElementById("content_cart").innerHTML = `
+    <div id="order_sent">
+        Vielen Dank für deine Bestellung. Wir bereiten alles frisch zu und wünschen dir schon jetzt einen <br> GUTEN APPETIT! <br> Dein Tast The World-Team
+    </div>`
+    document.getElementById("cart_icon_with_count").style.display = "none";
+    document.getElementById("back_to_start_icon").style.display = "flex";
+    document.getElementById("content_main_page").style.filter = "blur(5px)";
+    document.getElementById("content_main_page").style.pointerEvents = "none";
 }

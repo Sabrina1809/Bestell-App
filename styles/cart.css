@@ -16,6 +16,11 @@
     text-align: center;
     position: relative;
     cursor: default;
+
+    & #order_sent {
+        color: var(--bestellapp-orange);
+        padding: 40px 15px
+    }
     
     & h2 {
         padding: 10px 0;
@@ -175,6 +180,10 @@
                 padding-top: 3px;
                 justify-content: space-between;
 
+                & .min_sum_text {
+                    color: var(--bestellapp-orange);
+                }
+
                 .total_sum_title {
                     font-size: 15px;
                     padding-bottom: 3px;
@@ -209,7 +218,6 @@
     }
 }
 
-
 @media(min-width: 1604px) {
     .cart_small {
         left: calc((50vw + 720px) - 300px);
@@ -240,4 +248,3 @@
         }
     }
 }
-
