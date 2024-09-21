@@ -13,7 +13,6 @@ let mealTypes = [
 ]
 
 function openContinentav() {
-
     document.getElementById("choose_continent").style.display = "flex";
     logoRestaurant.style.display = "none";
     cartIcon.style.display = "none";
@@ -34,6 +33,9 @@ function filterContinent(c) {
         c = c;
         filterContinentSingle(c);
     }
+    window.scrollTo({
+        top: 0,
+    });
     logoRestaurant.style.display = "flex";
     cartIcon.style.display = "flex";
 }
@@ -42,12 +44,6 @@ function clearSections() {
     for (let i = 0; i < mealsSections.length; i++) {
         mealsSections[i].innerHTML = "";
     }
-}
-
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-    });
 }
 
 function filterContinentAll() {
@@ -79,7 +75,6 @@ function filterContinentAll() {
     }
     document.getElementById("choose_continent").style.display = "none";
     document.getElementById("continent_title").innerHTML = "alle";
-    scrollToTop();
 }
 
 function filterContinentSingle(c) {
@@ -109,14 +104,4 @@ function filterContinentSingle(c) {
     }
     document.getElementById("choose_continent").style.display = "none";
     document.getElementById("continent_title").innerHTML = menu[c].name;
-    scrollToTop();
-}
-
-function checkIfScrollToTop(x) {
-    let scroll = x
-    if (x === "yes") {
-        window.scrollTo({
-            top: 0,
-        });
-    }
 }
