@@ -36,8 +36,6 @@ function filterContinent(c) {
     window.scrollTo({
         top: 0,
     });
-    logoRestaurant.style.display = "flex";
-    cartIcon.style.display = "flex";
 }
 
 function clearSections() {

@@ -105,22 +105,25 @@ footer {
     transition: all 0.2s ease-in-out;
 }
 
-@media(max-width: 1000px) {
-    #cart_icon_with_count {
-        display: flex;
+@media(min-width: 1604px) {
+    #back_to_start_icon {
+        right: calc(((100vw - 1440px) / 2) + 150px);
+        transform: translate(50%);
     }
 }
 
 @media(min-width: 1000px) {
+    #cart_icon_with_count {
+        display: none;
+    }
     #back_to_start_icon {
         right: calc(5vw + 150px);
         transform: translate(50%);
     }
 }
 
-@media(min-width: 1604px) {
-    #back_to_start_icon {
-        right: calc(((100vw - 1440px) / 2) + 150px);
-        transform: translate(50%);
+@media(max-width: 1000px) {
+    #cart_icon_with_count {
+        display: flex;
     }
 }

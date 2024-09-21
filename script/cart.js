@@ -1,9 +1,8 @@
 let mealsWithQuantity = []
+let cartWithBackground = document.getElementById("cart_small");
+let restaurantLogo = document.getElementById("logo_restaurant");
 
 function openCloseCart() {
-    let cartWithBackground = document.getElementById("cart_small");
-    let restaurantLogo = document.getElementById("logo_restaurant");
-
     if (cartWithBackground.style.display == "flex") {
         cartWithBackground.style.display = "none";
         restaurantLogo.style.display = "flex";
@@ -21,18 +20,15 @@ function openCloseCart() {
 }
 
 function saveMealInfo(e, plusMinus1) {
-    let clickedButtonId = e.target.id;
-    let mealId = clickedButtonId.slice(9);
+    let mealId = e.target.id.slice(9);
     let continent = mealId.charAt(4);
     let mealType = mealId.slice(5, -1);
     let mealNo = mealId.charAt(mealId.length - 1);
     let newQty = menu[continent][mealType][mealNo].quantity + plusMinus1
     menu[continent][mealType][mealNo].quantity = newQty;
     document.getElementById(`count_${mealId}`).innerHTML = `${newQty}`;
-
     if (menu[continent][mealType][mealNo].quantity > 0) {
         document.getElementById(`count_${mealId}`).style.display = "flex";
-
     }
     saveMealForCart(continent, mealType, mealNo, newQty)
     showCartContent()
