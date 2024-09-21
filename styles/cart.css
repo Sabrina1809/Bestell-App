@@ -224,6 +224,7 @@
 
 @media(max-width: 1000px) {
     .cart_small {
+        display: none;
         backdrop-filter: blur(5px);
         position: fixed;
         width: 100%;

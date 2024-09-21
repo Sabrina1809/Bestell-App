@@ -2,12 +2,12 @@ let cartWithBackground = document.getElementById("cart_small");
 let restaurantLogo = document.getElementById("logo_restaurant");
 
 function openCloseCart() {
-    if (cartWithBackground.style.display == "none") {
-        cartWithBackground.style.display = "flex";
-        restaurantLogo.style.display = "none";
-    } else {
+    if (cartWithBackground.style.display == "flex") {
         cartWithBackground.style.display = "none";
         restaurantLogo.style.display = "flex";
+    } else {
+        cartWithBackground.style.display = "flex";
+        restaurantLogo.style.display = "none";
     }
 }
 
@@ -56,7 +56,7 @@ function showCartContent() {
         </div>`
     } else {
         showMealsInCart();
-        calcOrderSum();
+        calcOrderAndTotalSum();
     }
 }
 
@@ -158,6 +158,7 @@ function deleteFromCart(e) {
     loadContinentMenu(continentToLoad)
     showCartContent()
     setCountToBasket()
+    calcOrderAndTotalSum()
 }
 
 function setCountToBasket() {
@@ -166,16 +167,6 @@ function setCountToBasket() {
         sum += mealsWithQuantity[i].quantity
     }
     document.getElementById("count_in_cart").innerHTML = `${sum}`
-}
-
-function calcOrderSum() {
-    let orderSum = 0;
-    for (let i = 0; i < mealsWithQuantity.length; i++) {
-        orderSum += (mealsWithQuantity[i].quantity * mealsWithQuantity[i].price)
-    }
-    document.getElementById("current_sum").innerHTML = `${orderSum.toFixed(2).replace(".", ",")} €`;
-    
-    calcTotalSum(orderSum)
 }
 
 function calcDeliveryPrice(e) {
@@ -188,13 +179,17 @@ function calcDeliveryPrice(e) {
         document.getElementById("delivery_sum").innerHTML = `${pickup.toFixed(2).replace(".", ",")} €`
         document.getElementById("deliverytime").innerHTML = `ca. 20 min`
     }
+    calcOrderAndTotalSum()
 }
 
-function calcTotalSum(orderSum) {
-
+function calcOrderAndTotalSum() {
+    let orderSum = 0;
+    for (let i = 0; i < mealsWithQuantity.length; i++) {
+        orderSum += (mealsWithQuantity[i].quantity * mealsWithQuantity[i].price)
+    }
+    document.getElementById("current_sum").innerHTML = `${orderSum.toFixed(2).replace(".", ",")} €`;
     let deliveryPrice = document.getElementById("delivery_sum").innerHTML;
     deliveryPrice = Number(deliveryPrice.slice(0, -2).replace(",", "."))
-    let totalSum = orderSum + deliveryPrice
-    console.log(orderSum, deliveryPrice, totalSum)
-    document.getElementById("total_sum").innerHTML = `${totalSum.toFixed(2).replace(".", ",")} €`
+    let totalSum = Number(orderSum + deliveryPrice).toFixed(2).replace(".", ",");
+    document.getElementById("total_sum").innerHTML = `${totalSum} €`
 }
