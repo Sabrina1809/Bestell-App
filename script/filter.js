@@ -18,7 +18,6 @@ function openContinentav() {
     cartIcon.style.display = "none";
 
     window.onclick = function(e) {
-        console.log(e.target.id)
         if (e.target.id == "choose_continent") {
             document.getElementById("choose_continent").style.display = "none";
             logoRestaurant.style.display = "none";
