@@ -75,25 +75,28 @@ function showMealsInCart() {
     document.getElementById("menues_in_cart").innerHTML = "";
     for (let i = 0; i < mealsWithQuantity.length; i++) {
         let price = (mealsWithQuantity[i].quantity * mealsWithQuantity[i].price).toFixed(2).replace(".", ",");
-        let innerHTML = `
-        <div class="menu_in_cart" id="cart_${mealsWithQuantity[i].id}">
-            <div class="menu_cart_title">${mealsWithQuantity[i].title}</div>
-            <div class="add_remove_line">
-                <div id="decrease_${mealsWithQuantity[i].id}" class="meal_add_remove_inside_cart" onclick="addRemoveOne(event, -1)">
-                    -
-                </div>
-                <span class="count">${mealsWithQuantity[i].quantity}</span>
-                <div id="increase_${mealsWithQuantity[i].id}" class="meal_add_remove_inside_cart" onclick="addRemoveOne(event, 1)">
-                    +
-                </div>
-                <div class="price">${price} €</div>
-                <div class="meal_add_remove_inside_cart delete_from_cart">
-                    <img id="deleteId_${mealsWithQuantity[i].id}" onclick="deleteFromCart(event)" class="basket" src="./assets/icon/basket.png" alt="Mülleimer">
-                </div>
-                </div>
-        </div>`
-        document.getElementById("menues_in_cart").innerHTML += innerHTML;
+        showMealsInCartTemplate(i, price)
     }
+}
+
+function showMealsInCartTemplate(i, price) {
+    document.getElementById("menues_in_cart").innerHTML += `
+    <div class="menu_in_cart" id="cart_${mealsWithQuantity[i].id}">
+        <div class="menu_cart_title">${mealsWithQuantity[i].title}</div>
+        <div class="add_remove_line">
+            <div id="decrease_${mealsWithQuantity[i].id}" class="meal_add_remove_inside_cart" onclick="addRemoveOne(event, -1)">
+                -
+            </div>
+            <span class="count">${mealsWithQuantity[i].quantity}</span>
+            <div id="increase_${mealsWithQuantity[i].id}" class="meal_add_remove_inside_cart" onclick="addRemoveOne(event, 1)">
+                +
+            </div>
+            <div class="price">${price} €</div>
+            <div class="meal_add_remove_inside_cart delete_from_cart">
+                <img id="deleteId_${mealsWithQuantity[i].id}" onclick="deleteFromCart(event)" class="basket" src="./assets/icon/basket.png" alt="Mülleimer">
+            </div>
+            </div>
+    </div>`
 }
 
 function addRemoveOne(e, plusMinus1) {
