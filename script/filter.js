@@ -14,14 +14,14 @@ let mealTypes = [
 
 function openContinentav() {
     document.getElementById("choose_continent").style.display = "flex";
-    logoRestaurant.style.display = "none";
+    logoRestaurant.style.opacity = 0;
     cartIcon.style.display = "none";
 
     window.onclick = function(e) {
         if (e.target.id == "choose_continent") {
             document.getElementById("choose_continent").style.display = "none";
-            logoRestaurant.style.display = "none";
-            cartIcon.style.display = "none";
+            logoRestaurant.style.opacity = 1;
+            cartIcon.style.display = "flex";
         }
     }
 }
@@ -33,6 +33,7 @@ function filterContinent(c) {
         c = c;
         filterContinentSingle(c);
     }
+    logoRestaurant.style.opacity = 1;
     window.scrollTo({
         top: 0,
     });  
