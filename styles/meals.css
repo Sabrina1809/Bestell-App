@@ -36,7 +36,7 @@
                     margin-bottom: 10px;
                     & .meal_title {
                         width: max-content;
-                        max-width: 170px;
+                        max-width: 236px;
                     }
                     & .img_location {
                         height: 14px;
@@ -133,6 +133,23 @@
             & .meals_single {
                 & .count_and_add {
                     right: -20px;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 360px) {
+    .meals_ctn {
+        & .meal_type {
+            & .meals_single {
+                & .meals_info {
+                    & .single_meal_header {
+                        & .meal_title {
+                            width: max-content;
+                            max-width: 163px;
+                        }
+                    }
                 }
             }
         }
